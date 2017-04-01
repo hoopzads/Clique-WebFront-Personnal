@@ -1,13 +1,24 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
+import autoBind from '../hoc/autoBind';
+import EventDetail from './eventDetail';
 
 class eventItem extends Component {
     constructor(props) {
         super(props);
+        this.onButtonClick = this.onButtonClick.bind(this);
     }
+
+    onButtonClick() {
+        if(this.props.pages.pop_up_item === null) this.props.set_pop_up_item(<EventDetail />);
+        this.props.toggle_pop_item();
+    }
+
     render() {
         let detailShownClass = (this.props["detail-shown"] === "false") ? "card-only" : "";
         return (
-            <article role="event-item" className={detailShownClass}>
+            <article role="event-item" className={detailShownClass} onClick={this.onButtonClick}>
                 <h3 className="display-none">Event Name</h3>
                 <img role="main-poster" alt="main-poster" src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/concert_poster.png"/>
                 <div role="overlay" aria-hidden="true"></div>
@@ -47,4 +58,4 @@ class eventItem extends Component {
     }
 }
 
-export default eventItem;
+export default autoBind(eventItem);

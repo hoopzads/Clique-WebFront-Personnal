@@ -1,10 +1,13 @@
+/* eslint-disable */
+
 import React , { Component } from 'react';
+import $ from 'jquery';
 
 class sideMenu extends Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     onClose() {
         $(".content-move-active").removeClass("content-move-active").addClass("content-move-inactive");

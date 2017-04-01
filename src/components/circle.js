@@ -1,9 +1,9 @@
 import React , { Component } from 'react';
 
 class circle extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render() {
         let rObj = (
             <article className={`${this.props.parent}-item`}>

@@ -16,7 +16,6 @@ button {
 $blur-strength: 5px;
 
 .no-scroll {
-    position: fixed;
     overflow: hidden;
 }
 
@@ -30,7 +29,7 @@ $blur-strength: 5px;
   -ms-filter: blur($blur-strength);
   -o-filter: blur($blur-strength);
   filter: blur($blur-strength);
-  transform: scale(1.03);
+  transition: 0.2s;
 }
 
 .display-none {
@@ -71,6 +70,7 @@ $blur-strength: 5px;
     top: 0px;
     left: -300px;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
     background-color: #FAFAFA;
     box-sizing: border-box;
@@ -245,7 +245,7 @@ nav[role="top-nav"] {
     z-index: 1000;
 
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0px;
 
     display: flex;
@@ -618,7 +618,7 @@ article[role="event-item"] {
             padding-right: 10px;
         }
         section[role="bio"] {
-            margin-top: clac(0.06052631578947 * #{$event-item-height});
+            margin-top: calc(0.06052631578947 * #{$event-item-height});
             padding-right: 10px;
         }
         footer[role="bottom"] {
@@ -664,6 +664,7 @@ article[role="event-item"] {
 
 section[role="card-list"] {
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
 }
 section[role="card-list"] > * {
@@ -679,8 +680,8 @@ article.tag-item {
     background-color: #000;
     display: inline-block;
     align-items: center;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 12px;
+    margin-top: 12px;
 }
 
 article.channel-item {
@@ -736,6 +737,7 @@ article.event-detail {
     padding: calc(0.07434944237918216 * #{$event-detail-width}) calc(0.05390334572490706 * #{$event-detail-width});
     box-sizing: border-box;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     position: fixed;
     z-index: 551;
     top: calc(50% + 65px/2);
@@ -776,6 +778,7 @@ article.event-detail {
         .event-poster {
             width: 50%;
             overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
         }
 
         .event-name {

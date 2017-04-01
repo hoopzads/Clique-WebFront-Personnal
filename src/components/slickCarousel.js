@@ -1,9 +1,13 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
+import $ from 'jquery';
+import '../../public/resource/slick-1.6.0/slick/slick.min.js';
 
 class slickCarousel extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     componentDidMount() {
         $(".single-item").slick({

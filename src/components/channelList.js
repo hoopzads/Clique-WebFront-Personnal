@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Circle from './circle';
 
 class channelList extends Component {
-    constructor(props) {
-        super(props);
-
-    }
+    // constructor(props) {
+    //     super(props);
+    //
+    // }
 
     render() {
         let parent = "channel";

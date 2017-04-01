@@ -1,0 +1,29 @@
+.blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.2s;
+}
+
+.no-blur {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+    transition: 0.2s;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+#modal > *{
+    overflow-y: scroll !important;
+}
+
+.shift {
+    padding-top: 65px;
+}

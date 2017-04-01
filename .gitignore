@@ -1,4 +1,6 @@
 /node_modules
+/test-model
+/Old
 bundle.js
 npm-debug.log
 

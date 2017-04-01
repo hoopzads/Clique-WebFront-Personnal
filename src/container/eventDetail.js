@@ -1,14 +1,18 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
+import $ from 'jquery';
+import autoBind from '../hoc/autoBind';
 
 class eventDetail extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     componentDidMount() {
         $(document).ready(function() {
             if($(window).width() > 768) {
-                $('.top-moving').css('height', $('.event-poster').children().height());
+                $('.top-moving').css('height', $('.event-poster').children().height() + 20);
                 if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
                 if($('.event-detail').css('padding-left').replace('px','') > 29) $('.event-detail').css('padding-left', '29px');
             }
@@ -20,7 +24,7 @@ class eventDetail extends Component {
 
         $(window).resize(function() {
             if($(window).width() > 768) {
-                $('.top-moving').css('height', $('.event-poster').children().height());
+                $('.top-moving').css('height', $('.event-poster').children().height() + 20);
                 if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
                 if($('.event-detail').css('padding-left').replace('px','') > 29) $('.event-detail').css('padding-left', '29px');
             }
@@ -29,6 +33,10 @@ class eventDetail extends Component {
                 $('.event-detail').css('padding', '');
             }
         })
+    }
+
+    onExit() {
+        this.props.toggle_pop_item();
     }
 
     componentWillUnmount() {
@@ -40,7 +48,7 @@ class eventDetail extends Component {
             <div>
                 <div className="background-overlay" aria-hidden="true" />
                 <article className="event-detail basic-card-no-glow">
-                    <button className="invisible square-round" role="event-exit">
+                    <button className="invisible square-round" role="event-exit" onClick={this.onExit.bind(this)}>
                         <img src="../../resource/images/X.svg" />
                     </button>
                     <div className="top-moving">
@@ -86,4 +94,4 @@ class eventDetail extends Component {
     }
 }
 
-export default eventDetail;
+export default autoBind(eventDetail);

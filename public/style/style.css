@@ -13,7 +13,6 @@ button {
 }
 
 .no-scroll {
-  position: fixed;
   overflow: hidden;
 }
 
@@ -27,7 +26,7 @@ button {
   -ms-filter: blur(5px);
   -o-filter: blur(5px);
   filter: blur(5px);
-  transform: scale(1.03);
+  transition: 0.2s;
 }
 
 .display-none {
@@ -68,6 +67,7 @@ button {
   top: 0px;
   left: -300px;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   background-color: #FAFAFA;
   box-sizing: border-box;
@@ -255,7 +255,7 @@ nav[role="top-nav"] {
   vertical-align: middle;
   z-index: 1000;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: flex;
   align-items: center;
@@ -636,7 +636,7 @@ article[role="event-item"] section[content="detail"] section[role="middle-detail
 }
 
 article[role="event-item"] section[content="detail"] section[role="bio"] {
-  margin-top: clac(0.06053 * 300px);
+  margin-top: calc(0.06052631578947 * 300px);
   padding-right: 10px;
 }
 
@@ -681,6 +681,7 @@ article[role="event-item"] section[content="detail"] p.hr {
 
 section[role="card-list"] {
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
 }
 
@@ -695,8 +696,8 @@ article.tag-item {
   background-color: #000;
   display: inline-block;
   align-items: center;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: 12px;
+  margin-top: 12px;
 }
 
 article.channel-item {
@@ -736,6 +737,7 @@ article.event-detail {
   padding: calc(0.07434944237918216 * 75vw) calc(0.05390334572490706 * 75vw);
   box-sizing: border-box;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   position: fixed;
   z-index: 551;
   top: calc(50% + 65px/2);
@@ -775,6 +777,7 @@ article.event-detail .top-moving .event-info,
 article.event-detail .top-moving .event-poster {
   width: 50%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 article.event-detail .top-moving .event-name {

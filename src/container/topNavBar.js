@@ -1,5 +1,11 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 import SearchBox from '../components/searchBox';
+
+import autoBind from '../hoc/autoBind';
+
+import $ from 'jquery';
 
 class topNavBar extends Component {
 
@@ -7,12 +13,13 @@ class topNavBar extends Component {
         super(props);
         this.state = {
             'searchTerm': '',
-            'isFadeIn': false
+            'isFadeIn': true
         }
 
         this.onUpdateSearch = this.onUpdateSearch.bind(this);
         this.onSearchClick = this.onSearchClick.bind(this);
         this.onWindowResize = this.onWindowResize.bind(this);
+        this.onButtonToggle = this.onButtonToggle.bind(this);
     }
 
     onWindowResize() {
@@ -21,12 +28,15 @@ class topNavBar extends Component {
             if($(".content-move-active").length) {
                 $(".content-move-active").removeClass("content-move-active").addClass("content-move-inactive");
             }
-            if(_this.state.isFadeIn) {
+            if(!_this.state.isFadeIn) {
                 _this.setState({
                     ...(_this.state),
                     'isFadeIn': !_this.state.isFadeIn
                 });
                 $('.search-box-container').fadeToggle(200);
+                this.props.unblur_bg();
+                this.props.forced_fix_bg();
+                this.props.searched_item_handler(!this.props.pages.searched_item);
             }
         } else {
             if($('.profile-menu-active').length) $('.profile-menu-active').removeClass('profile-menu-active').addClass('profile-menu-inactive');
@@ -49,6 +59,16 @@ class topNavBar extends Component {
             ...(this.state),
             'isFadeIn': !this.state.isFadeIn
         });
+        if(this.state.isFadeIn) this.props.forced_fix_bg();
+        else this.props.cancel_fix_bg();
+        //this.props.pages.forced_fixed_body
+        this.props.searched_item_handler(!this.props.pages.searched_item);
+        if(this.props.pages.is_item_shown) {
+            // this.props.hide_pop_item();
+            this.props.blur_bg();
+        }
+        else this.props.toggle_bg();
+        console.log(this.props.pages);
         $('.search-box-container').fadeToggle(200);
     }
 
@@ -69,6 +89,10 @@ class topNavBar extends Component {
     onButtonToggle() {
         if($(".content-move-inactive").length) {
             $(".content-move-inactive").removeClass("content-move-inactive").addClass("content-move-active");
+            if($('.search-box-container').css('display') === "block") {
+                $('.search-box-container').fadeToggle(200);
+                this.props.unblur_bg();
+            }
         }
         else {
             $(".content-move-active").removeClass("content-move-active").addClass("content-move-inactive");
@@ -76,7 +100,7 @@ class topNavBar extends Component {
     }
 
     onToggleProfile() {
-        if($('.profile-menu-active').length == 0) {
+        if($('.profile-menu-active').length === 0) {
             $('.profile-menu-inactive').removeClass('profile-menu-inactive').addClass('profile-menu-active');
             if($('.tags-menu-active').length) {
                 $('.tags-menu-active').removeClass('tags-menu-active').addClass('tags-menu-inactive');
@@ -87,7 +111,7 @@ class topNavBar extends Component {
     }
 
     onToggleTags() {
-        if($('.tags-menu-active').length == 0) {
+        if($('.tags-menu-active').length === 0) {
             $('.tags-menu-inactive').removeClass('tags-menu-inactive').addClass('tags-menu-active');
             if($('.profile-menu-active').length) {
                 $('.profile-menu-active').removeClass('profile-menu-active').addClass('profile-menu-inactive');
@@ -98,15 +122,14 @@ class topNavBar extends Component {
     }
 
     render() {
-
         return (
-            <nav role="top-nav">
+            <nav aria-hidden="false" role="top-nav">
                 <button className="outline square-round toggle" onClick={this.onButtonToggle}>
                     <i className="fa fa-bars" aria-hidden="true"></i>
                 </button>
                 <section className="flex-left toggle-not" content="left-group" aria-hidden="true">
                     <button className="invisible" onClick={this.onToggleTags}>
-                        <img src="../resource/images/bubble.svg" role="tags-icon" />
+                        <img aria-hidden="false" src="../resource/images/bubble.svg" role="tags-icon" alt="bubble-icon"/>
                     </button>
                     <div aria-hidden="true" className="vr"></div>
                     <form>
@@ -115,9 +138,9 @@ class topNavBar extends Component {
                     </form>
                 </section>
                 <img className="flex-center" src="../../resource/images/icon.png" alt="icon" />
-                <button className="flex-right toggle-not invisible" role="profile-button" onClick={this.onToggleProfile}>
+                <button aria-hidden="false" className="flex-right toggle-not invisible" role="profile-button" onClick={this.onToggleProfile}>
                     Mitsuha
-                    <img src="../../resource/images/dummyProfile.png" />
+                    <img src="../../resource/images/dummyProfile.png" alt="profile"/>
                 </button>
                 <button className="flex-right toggle outline square-round" onClick={this.onSearchClick}>
                     <i className="fa fa-search" aria-hidden="true"></i>
@@ -130,4 +153,4 @@ class topNavBar extends Component {
     }
 }
 
-export default topNavBar;
+export default autoBind(topNavBar, false);

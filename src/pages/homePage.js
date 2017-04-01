@@ -1,15 +1,23 @@
+/* eslint-disable */
+
 import React , { Component } from 'react';
-import EventItem from '../components/eventItem';
+import EventItem from '../container/eventItem';
 import CardList from '../components/cardList';
 import SlickCarousel from '../components/slickCarousel';
 import CircleList from '../components/circleList';
 import ChannelList from '../components/channelList';
-import EventDetail from '../components/eventDetail';
+
+import pages from '../hoc/pages';
 
 class homePage extends Component {
 
     constructor(props) {
         super(props);
+        this.onClickMe = this.onClickMe.bind(this);
+    }
+
+    onClickMe() {
+        // this.props.searched_item_handler(true);
     }
 
     render() {
@@ -17,7 +25,7 @@ class homePage extends Component {
         //Note: if EventDetail is shown, side-menu should not be pressed -> drastic layout change
 
         return (
-            <section role="main-content">
+            <section role="main-content" onClick={this.onClickMe}>
                 <h1 className="display-none">Main body</h1>
                 <section role="carousel">
                     <h2 className="display-none">Carousel</h2>
@@ -60,4 +68,5 @@ class homePage extends Component {
     }
 }
 
-export default homePage;
+
+export default pages(homePage, true);

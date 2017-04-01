@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import Circle from './circle';
+import $ from 'jquery';
 
 class circleList extends Component {
     constructor(props) {
@@ -45,12 +46,18 @@ class circleList extends Component {
         var maxItem = (item.length < Math.floor(ratio*winWidth/itemWidth)) ? item.length : Math.floor(ratio*winWidth/itemWidth);
         if($(window).width() <= 768) {
             maxItem = (maxItem < 4) ? maxItem : 4;
-            this.state.prev = true;
+            this.setState({
+                ...this.state,
+                pre: true
+            });
         }
         maxItem = ($(window).width() > 768 && maxItem > 4) ? 4 : maxItem;
         if(this.state.prev && $(window).width() > 768) {
             maxItem = 2;
-            this.state.prev = false;
+            this.setState({
+                ...this.state,
+                pre: false
+            });
         }
         wrapper.css('width', maxItem*itemWidth);
     }
