@@ -17,10 +17,13 @@ class eventItem extends Component {
 
     render() {
         let detailShownClass = (this.props["detail-shown"] === "false") ? "card-only" : "";
+
+        const posterObj = (this.props.posterSrc) ? <div role="main-poster" alt="main-poster" style={{backgroundImage: `url('${this.props.posterSrc}')`}} /> : <div role="main-poster" alt="main-poster" style={{backgroundImage: `url('https://about.canva.com/wp-content/uploads/sites/3/2015/01/concert_poster.png')`}}/>;
+
         return (
             <article role="event-item" className={detailShownClass} onClick={this.onButtonClick}>
                 <h3 className="display-none">Event Name</h3>
-                <img role="main-poster" alt="main-poster" src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/concert_poster.png"/>
+                {posterObj}
                 <div role="overlay" aria-hidden="true"></div>
                 <span className="small top" role="joined"><i className="fa fa-check" aria-hidden="true"></i> Joined</span>
                 <section content="detail">

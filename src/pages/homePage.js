@@ -24,6 +24,11 @@ class homePage extends Component {
 
         //Note: if EventDetail is shown, side-menu should not be pressed -> drastic layout change
 
+        let posterTest = [];
+        for(var i = 1; i < 32; i++) {
+            posterTest.push(`../../resource/images/poster_dummy/${i}.jpg`);
+        }
+
         return (
             <section role="main-content" onClick={this.onClickMe}>
                 <h1 className="display-none">Main body</h1>
@@ -43,10 +48,10 @@ class homePage extends Component {
                         </section>
                         <section content="new">
                             <h2>New</h2>
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
+                            <EventItem posterSrc={posterTest[0]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[1]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[2]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[3]} detail-shown="true" />
                         </section>
                     </section>
                     <section content="bottom-half">
@@ -56,10 +61,10 @@ class homePage extends Component {
                         </section>
                         <section content="for-you">
                             <h2>For you</h2>
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
-                            <EventItem detail-shown="true" />
+                            <EventItem posterSrc={posterTest[4]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[5]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[6]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[7]} detail-shown="true" />
                         </section>
                     </section>
                 </div>

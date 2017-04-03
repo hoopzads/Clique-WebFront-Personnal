@@ -22,7 +22,7 @@ export default function(ComposedComponent, isBindWithRequests, actionsAdded, sta
                 $('#modal').css('display', 'none');
             }
             //this.props.getChannel("5881ce872d9ae35708911f04");
-            this.props.getAllChannel();
+            //this.props.getAllChannel();
         }
 
         componentWillReceiveProps(nextProps) {
@@ -43,8 +43,6 @@ export default function(ComposedComponent, isBindWithRequests, actionsAdded, sta
 
             let blur_class = (this.props.pages.is_blur) ? "blur shift" : "no-blur shift";
             let pop_up_item = (this.props.pages.pop_up_item != null) ? this.props.pages.pop_up_item : (<div aria-hidden="true"></div>);
-
-            console.log(this.props);
 
             return (
                 <div>
@@ -72,6 +70,7 @@ export default function(ComposedComponent, isBindWithRequests, actionsAdded, sta
             }
             stateAdded.map((item) => {
                 rObj[item] = state[item];
+                return null;
             });
             return (rObj);
         }

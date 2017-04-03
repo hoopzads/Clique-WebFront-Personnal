@@ -11,6 +11,8 @@ import reducer_fetch_all_channels from './reducer_fetch_all_channels';
 import reducer_fetch_all_events from './reducer_fetch_all_events';
 import reducer_fetch_new_event from './reducer_fetch_new_event';
 
+import reducer_fb from './reducer_FB';
+
 const rootReducer = combineReducers({
     pages: pagesReducer,
     a_getChannelObj: reducer_get_channel,
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
     a_searchTagObj: reducer_search_tag,
     a_searchDateObj: reducer_search_date,
     a_allEventsObj: reducer_fetch_all_events,
-    a_newEventsObj: reducer_fetch_new_event
+    a_newEventsObj: reducer_fetch_new_event,
+    fb: reducer_fb
+    //fb
 });
 
 export default rootReducer;

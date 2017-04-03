@@ -1,8 +1,12 @@
 import { myStore } from '../index';
 import * as types from './types';
 import axios from 'axios';
+import { setCookie, getCookie, clearAllCookie } from './common';
 
-const hostname = "http://cueventhub.com:1111/";
+//myStore.getState()
+
+const hostname = "https://www.cueventhub.com/api/";
+const expireDefaultInterval = 1000*60*60*3;
 
 export const requestActionList = [
     "getChannel", "getEvent", "searchEvent", "searchChannel",
@@ -140,6 +144,179 @@ function request(url, method, types) {
             };
     }
     return rObj;
+}
+
+//
+
+export function setFBVariable(_FB) {
+    if(getCookie('fb_is_login')) {
+        setTimeout(function() {
+            let rObj_1 = {};
+            let rObj_2 = {authResponse: {}, status: "unknown"};
+
+            ['fb_basic_info_email', 'fb_basic_info_name', 'fb_basic_info_id'].map((item) => {
+                rObj_1[item.replace('fb_basic_info_','')] = getCookie(item);
+                return null;
+            });
+
+            ['fb_accessToken', 'fb_grantedScopes', 'fb_signedRequest', 'fb_userID'].map((item) => {
+                rObj_2.authResponse[item.replace('fb_','')] = getCookie(item);
+                return null;
+            })
+
+            myStore.dispatch({
+                type: types.FB_FETCH_BASIC_INFO,
+                payload: rObj_1
+            });
+
+            myStore.dispatch({
+                type: types.FB_LOGIN,
+                payload: rObj_2
+            });
+
+            fbGetSeverToken();
+            fbGetFriendsList();
+
+        }, 0);
+    };
+    return ({
+        type: types.SET_FB_VARIABLE,
+        payload: _FB
+    });
+}
+
+//
+
+export function fbUpdateStatus() {
+    const FB = myStore.getState().pages.FB;
+    if(FB) {
+        FB.getLoginStatus((res) => {
+            myStore.dispatch({
+                type: types.FB_UPDATE_STATUS,
+                payload: res.status
+            });
+        })
+    }
+    return ({
+        type: null
+    });
+}
+
+export function fbClearInfo() {
+    return ({
+        type: types.FB_CLEAR,
+        payload: null
+    })
+}
+
+export function fbLogin(callback) {
+    const FB = myStore.getState().pages.FB;
+    if(FB) {
+        FB.login((res) => {
+            if(res.status === "connected") {
+
+                Object.keys(res.authResponse).map((item) => {
+                    if(item !== "expiresIn")
+                        setCookie(`fb_${item}`, res.authResponse[item], res.expiresIn*1000);
+                    return null;
+                });
+
+                setCookie(`fb_is_login`, true, expireDefaultInterval);
+
+                myStore.dispatch({
+                    type: types.FB_LOGIN,
+                    payload: res
+                });
+
+            }
+            if(typeof(callback) === "function") callback();
+        }, {
+            scope: 'user_friends,email,public_profile',
+            return_scopes: true
+        });
+    }
+    return {
+        type: null
+    };
+}
+
+export function fbLogout() {
+    const FB = myStore.getState().pages.FB;
+    if(FB && myStore.getState().fb.isLogin) {
+        FB.logout((res) => {
+            if(res.status === "unknown") {
+                myStore.dispatch({
+                    type: types.FB_LOGOUT,
+                    payload: res
+                });
+                clearAllCookie();
+            }
+            fbUpdateStatus();
+        });
+    }
+    return {
+        type: null
+    };
+}
+
+export function fbGetBasicInfo() {
+    const FB = myStore.getState().pages.FB;
+    if(FB) {
+        fbUpdateStatus();
+        FB.api('/me', { locale: 'en_US', fields: 'name, email' },  (res) => {
+            myStore.dispatch({
+                type: types.FB_FETCH_BASIC_INFO,
+                payload: res
+            });
+            Object.keys(res).map((item) => {
+                setCookie(`fb_basic_info_${item}`, res[item], expireDefaultInterval);
+                return null;
+            });
+        });
+    }
+    return {
+        type: null
+    };
+}
+
+export function fbGetFriendsList() {
+    const FB = myStore.getState().pages.FB;
+    if(FB) {
+        fbUpdateStatus();
+        FB.api('/me/friends',  (res) => {
+            myStore.dispatch({
+                type: types.FB_FETCH_USERS_FRIENDS_LIST,
+                payload: res
+            });
+            //console.log(res.data);
+        });
+    }
+    return {
+        type: null
+    };
+}
+
+export function fbGetSeverToken() {
+    const FB = myStore.getState().pages.FB;
+    if(FB && (myStore.getState().fb.status === "connected")) {
+        axios.get(`${hostname}login/facebook?access_token=${myStore.getState().fb.authResponse.accessToken}&id=${myStore.getState().fb.authResponse.userID}`).then((res) => {
+            myStore.dispatch({
+                type: types.FB_GET_TOKEN,
+                payload: res.data.access_token
+            });
+            setCookie(`fb_sever_token`, res.data.access_token, expireDefaultInterval);
+        }).catch((err) => {
+            console.log(err);
+        })
+
+        // myStore.dispatch({
+        //     type: types.FB_GET_TOKEN,
+        //     payload: null
+        // });
+    }
+    return ({
+        type: null
+    });
 }
 
 //

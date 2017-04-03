@@ -548,7 +548,8 @@ article[role="event-item"] {
         display: none;
     }
 
-    img[role="main-poster"] {
+    img[role="main-poster"],
+    div[role="main-poster"] {
         height: 100%;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -567,6 +568,12 @@ article[role="event-item"] {
         left: 0px;
         border: 0;
         text-align: center;
+    }
+
+    div[role="main-poster"] {
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position: center top;
     }
 
     section[content="detail"] {

@@ -25,3 +25,12 @@ export const SEARCH_BY_DATE = 'SEARCH_BY_DATE';
 export const FETCH_NEW_EVENT = 'FETCH_NEW_EVENT';
 export const FETCH_ALL_EVENTS = 'FETCH_ALL_EVENTS';
 export const FETCH_ALL_CHANNELS = 'FETCH_ALL_CHANNELS';
+
+export const FB_LOGIN = "FB_LOGIN";
+export const FB_LOGOUT = 'FB_LOGOUT';
+export const FB_FETCH_BASIC_INFO = 'FB_FETCH_BASIC_INFO';
+export const FB_FETCH_USERS_FRIENDS_LIST = 'FB_FETCH_USERS_FRIENDS_LIST';
+export const FB_CLEAR = 'FB_CLEAR';
+export const FB_UPDATE_STATUS = 'FB_UPDATE_STATUS';
+export const FB_GET_TOKEN = 'FB_GET_TOKEN';
+export const SET_FB_VARIABLE = 'SET_FB_VARIABLE';

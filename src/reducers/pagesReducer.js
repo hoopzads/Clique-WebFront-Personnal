@@ -4,7 +4,8 @@ const initialState = {
     is_blur: false,
     pop_up_item: null,
     is_item_shown: false,
-    forced_fixed_body: false
+    forced_fixed_body: false,
+    FB: null
 }
 
 export default ( state = initialState, action ) => {
@@ -46,6 +47,11 @@ export default ( state = initialState, action ) => {
                 ...state,
                 forced_fixed_body: action.payload
             });
+        case types.SET_FB_VARIABLE:
+            return ({
+                ...state,
+                FB : action.payload
+            })
         default:
             return state;
     }

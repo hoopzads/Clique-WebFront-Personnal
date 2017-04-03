@@ -563,7 +563,8 @@ article[role="event-item"] span[role="joined"] {
   display: none;
 }
 
-article[role="event-item"] img[role="main-poster"] {
+article[role="event-item"] img[role="main-poster"],
+article[role="event-item"] div[role="main-poster"] {
   height: 100%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -581,6 +582,12 @@ article[role="event-item"] img[role="main-poster"] {
   left: 0px;
   border: 0;
   text-align: center;
+}
+
+article[role="event-item"] div[role="main-poster"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 article[role="event-item"] section[content="detail"] {

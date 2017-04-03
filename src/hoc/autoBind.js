@@ -33,6 +33,7 @@ export default function(ComposedComponent, isBindWithRequests, actionsAdded, sta
             }
             stateAdded.map((item) => {
                 rObj[item] = state[item];
+                return null;
             });
             return (rObj);
         }
