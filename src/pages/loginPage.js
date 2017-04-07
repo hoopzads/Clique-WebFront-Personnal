@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from '../hoc/autoBind';
+import { Link } from 'react-router';
 
 import './css/login.css';
 
@@ -8,6 +9,10 @@ class loginPage extends Component {
     onFetch() {
         this.props.fbGetBasicInfo();
         this.props.fbGetFriendsList();
+    }
+
+    onFetchToken() {
+        this.props.fbGetSeverToken();
     }
 
     onLogin() {
@@ -20,22 +25,57 @@ class loginPage extends Component {
     }
 
     render() {
-        const Button = (this.props.fb.isLogin) ? <button onClick={this.onLogout.bind(this)}>Logout</button> : <button onClick={this.onLogin.bind(this)}>Login with facebook</button>;
-        const Fetch = (this.props.fb.isLogin) ? <button onClick={this.onFetch.bind(this)}>Fetch</button> : null
-        return (
-            <section>
-                <atricle className="basic-card-no-glow login-card">
-                    {Button}
-                    {Fetch}
-                    <h2>Basic Info</h2>
-                    <div>
-                        {this.props.fb.basic_info.name}<br />
-                        {this.props.fb.basic_info.id}<br />
-                        {this.props.fb.basic_info.email}
-                    </div>
-                </atricle>
-            </section>
+
+        const isTest = false;
+        const basicInfo = (
+            <div>
+                Basic Info<br />
+                {this.props.fb.basic_info.name}<br />
+                {this.props.fb.basic_info.id}<br />
+                {this.props.fb.basic_info.email}<br />
+                <br />
+                Friends Using<br />
+            {(this.props.fb.user_friends) ? this.props.fb.user_friends.map((item, key) => {
+                return <div key={key}>{item.name} {item.id}</div>
+            }) : null}
+            </div>
         )
+
+        const innerContext = (isTest) ? (
+            <section>
+                This is for testing purpose<br />
+                <button onClick={this.onLogin.bind(this)}>Login</button><br />
+                <button onClick={this.onLogout.bind(this)}>Logout</button><br />
+                <button onClick={this.onFetch.bind(this)}>Fetch</button><br />
+                <button onClick={this.onFetchToken.bind(this)}>Token Fetch</button><br />
+                {basicInfo}
+            </section>
+        ) : (
+            <section className="login-page">
+                <atricle className="basic-card-no-glow login-card">
+                    <img src="../../resource/images/icon.png" alt="icon" />
+                    <button alt="fb-login" onClick={this.onLogin.bind(this)}>
+                        <div alt="fb-icon-container">
+                            <img src="../../resource/images/fb_icon.svg" alt="fb-icon" />
+                        </div>
+                        <div>
+                            Log in with Facebook
+                        </div>
+                    </button>
+                    <Link to='/home'>
+                        Continue as guest
+                    </Link>
+                </atricle>
+                <footer alt="login-footer">
+                    Created By
+                    <div aria-hidden="true" alt="icon-zone">
+                        <img src="../../resource/images/ABJ.png" alt="ABJ-icon" />
+                    </div>
+                </footer>
+            </section>
+        );
+
+        return innerContext
     }
 }
 

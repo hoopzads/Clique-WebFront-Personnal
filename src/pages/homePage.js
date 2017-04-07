@@ -8,6 +8,7 @@ import CircleList from '../components/circleList';
 import ChannelList from '../components/channelList';
 
 import pages from '../hoc/pages';
+import normalPage from '../hoc/normPage';
 
 class homePage extends Component {
 
@@ -74,4 +75,4 @@ class homePage extends Component {
 }
 
 
-export default pages(homePage, true);
+export default normalPage(pages(homePage, true));
