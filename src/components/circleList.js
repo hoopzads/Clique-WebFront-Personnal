@@ -84,18 +84,6 @@ class circleList extends Component {
                 <Circle parent={this.props.parent} />
                 <Circle parent={this.props.parent} />
                 <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
-                <Circle parent={this.props.parent} />
             </section>
         );
     }

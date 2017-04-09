@@ -296,10 +296,11 @@ export function fbGetFriendsList() {
     };
 }
 
-export function fbGetSeverToken() {
+export function fbGetSeverToken(callback) {
     const FB = myStore.getState().pages.FB;
     if(FB && (myStore.getState().fb.status === "connected")) {
         axios.get(`${hostname}login/facebook?access_token=${myStore.getState().fb.authResponse.accessToken}&id=${myStore.getState().fb.authResponse.userID}`).then((res) => {
+            console.log(res);
             myStore.dispatch({
                 type: types.FB_GET_TOKEN,
                 payload: res.data.access_token
@@ -308,6 +309,8 @@ export function fbGetSeverToken() {
         }).catch((err) => {
             console.log(err);
         })
+
+        if(typeof(callback) === "function") callback();
 
         // myStore.dispatch({
         //     type: types.FB_GET_TOKEN,

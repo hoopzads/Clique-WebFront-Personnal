@@ -30,16 +30,20 @@ class slickCarousel extends Component {
     }
 
     render() {
+        let posterTest = [];
+        for(var i = 1; i < 32; i++) {
+            posterTest.push(`../../resource/images/poster_dummy/${i}.jpg`);
+        }
         return (
             <div>
                 <div className='myContainer'>
                     <div className='single-item'>
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[10]})`}}>1</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[12]})`}}>2</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[23]})`}}>3</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[16]})`}}>4</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[25]})`}}>5</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[20]})`}}>6</div>
                     </div>
                 </div>
             </div>

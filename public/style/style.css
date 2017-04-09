@@ -304,7 +304,7 @@ section[role="main-content"] {
 }
 
 section[role="main-content"] .below-carousel {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: auto;
 }
 
@@ -566,33 +566,43 @@ section[role="carousel"] .myContainer {
   margin: 0 auto;
   top: -20px;
   width: calc(100vw);
-  max-width: 1400px;
+  max-width: 1280px;
 }
 
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1280px) {
   section[role="carousel"] .myContainer {
     left: -20px;
   }
 }
 
-@media all and (max-width: calc($carousel-container-max-width + 40px)) and (min-width: 1400px) {
+@media all and (max-width: calc($carousel-container-max-width + 40px)) and (min-width: 1280px) {
   section[role="carousel"] .myContainer {
-    left: calc(-20*(40px - (100vw - 1400px))/40);
+    left: calc(-20*(40px - (100vw - 1280px))/40);
   }
 }
 
 section[role="carousel"] .slick-slide {
   text-align: center;
   color: #419be0;
-  background: #777;
+  background-color: #777;
+  background: -webkit-linear-gradient(right, top, #fff50b, #ffab00);
+  background: -o-linear-gradient(bottom left, #fff50b, #ffab00);
+  background: -moz-webkit-linear-gradient(bottom, left, #fff50b, #ffab00);
+  background: linear-gradient(to bottom left, #fff50b, #ffab00);
   margin-left: 2px;
   margin-right: 2px;
   width: 65vw;
   max-width: calc(800px);
-  min-width: 280px;
-  min-height: calc(9/16 * 280px);
+  min-width: 386px;
+  min-height: calc(9/16 * 386px);
   height: calc(9/16 * 65vw);
   max-height: calc(9/16 * 800px);
+}
+
+.slick-slide-item {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
 }
 
 div.search-box-container {
@@ -671,6 +681,7 @@ section[content="tag"],
 section[content="channel"] {
   flex: 1;
   display: inline-block;
+  max-width: 27%;
 }
 
 section[content="new"],
@@ -738,7 +749,7 @@ article[role="event-item"] {
   background-color: #FFF;
   position: relative;
   display: inline-block;
-  margin: 15px;
+  margin: 15px 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   z-index: 500;
 }
@@ -889,7 +900,7 @@ section[role="card-list"] {
 }
 
 section[role="card-list"] > * {
-  margin: 0px 5px 15px 5px;
+  margin: 0px 19px 15px 5px;
 }
 
 article.tag-item {
@@ -899,8 +910,8 @@ article.tag-item {
   background-color: #000;
   display: inline-block;
   align-items: center;
-  margin-right: 12px;
-  margin-top: 12px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 article.channel-item {
@@ -1080,6 +1091,7 @@ article.event-detail .top-moving .event-poster img[alt="tag-icon"] {
   section[content="for-you"] {
     flex: auto;
     width: 100%;
+    max-width: initial;
   }
   section[content="bottom-half"] > *:first-child {
     border-right: 0px;

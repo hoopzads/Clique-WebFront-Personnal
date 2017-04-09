@@ -10,7 +10,7 @@ class eventDetail extends Component {
     // }
 
     componentDidMount() {
-        $(document).ready(function() {
+        $(document).ready(setTimeout(function() {
             if($(window).width() > 768) {
                 $('.top-moving').css('height', $('.event-poster').children().height() + 20);
                 if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
@@ -20,7 +20,7 @@ class eventDetail extends Component {
                 $('.top-moving').css('height', 'initial');
                 $('.event-detail').css('padding', '');
             }
-        });
+        }, 10));
 
         $(window).resize(function() {
             if($(window).width() > 768) {
@@ -58,7 +58,7 @@ class eventDetail extends Component {
                         </div>
                         <div className="event-poster" aria-hidden="true">
                             <div>
-                                <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/school_poster.png" alt="main-poster" />
+                                <img src="../../resource/images/poster_dummy/10.jpg" alt="main-poster" />
                                 <div className="tags-container"><img alt="tag-icon" /><img alt="tag-icon" /><img alt="tag-icon" /></div>
                             </div>
                         </div>
