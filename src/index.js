@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './container/profilePopup.js';
+import App from './components/app.js'
+// import App from './container/profilePopup.js';
 import './index.css';
 
 import { Provider } from 'react-redux';
