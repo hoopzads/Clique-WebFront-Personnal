@@ -342,6 +342,202 @@ button[role="profile-button"] img {
   display: inline-block;
 }
 
+/*tm*/
+div.profile-head {
+  margin-bottom: 40px;
+  margin-left: 125px;
+}
+
+/*tm*/
+div.profile-head h2[alt="profile-name"] {
+  margin-bottom: 5px;
+  font-weight:normal;
+}
+
+/*tm*/
+div.profile-head div[alt="faculty-icon"] {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background: #B22222;
+  margin-top:4px;
+  margin-right: 5px;
+  position: absolute;
+}
+
+div.profile-head p {
+  margin-left: 20px;
+}
+
+/*tm*/
+div.profile-popup {
+  font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+}
+
+/*tm*/
+div.profile-popup img[alt="profile-pic"] {
+  height: calc(85px);
+  margin-left: 20px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: inline-block;
+  position: absolute;
+}
+
+/*tm*/
+div.profile-section {
+  width: 300px;
+  height: 110px;
+  background-color: #F0F0F0;
+  margin-left: 20px;
+  margin-bottom: 17px;
+  padding: 5px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+}
+
+/*tm*/
+div.profile-section h4 {
+  font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+  margin-left: 5px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  color: #A0A0A0;
+}
+
+/*tm*/
+div.my-event1 {
+  height: 25px;
+}
+
+/*tm*/
+div.my-event1 p {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+  color: #FF1493;
+}
+
+/*tm*/
+div.my-event1 div[alt="event-icon"] {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background: #FF1493;
+  margin-top:4px;
+  margin-left: 10px;
+  margin-right: 5px;
+  position: absolute;
+}
+
+/*tm*/
+div.my-event2 {
+  height: 25px;
+}
+
+/*tm*/
+div.my-event2 p {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+  color: #1493FF;
+}
+
+/*tm*/
+div.my-event2 div[alt="event-icon"] {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background: #1493FF;
+  margin-top:4px;
+  margin-left: 10px;
+  margin-right: 5px;
+  position: absolute;
+}
+
+/*tm*/
+div.my-event3 {
+  height: 25px;
+}
+
+/*tm*/
+div.my-event3 p {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+  color: #FFC000;
+}
+
+/*tm*/
+div.my-event3 div[alt="event-icon"] {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background: #FFC000;
+  margin-top:4px;
+  margin-left: 10px;
+  margin-right: 5px;
+  position: absolute;
+}
+
+/*tm*/
+div.my-noti p {
+  color: #555555;
+  margin-left: 30px;
+  font-size: 0.9em;
+}
+
+/*tm*/
+div.my-noti img[alt="noti-icon"] {
+  height: calc(12px);
+  margin-left: 10px;
+  margin-right: 6px;
+  margin-top: 3px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: inline-block;
+  position: absolute;
+}
+
+/*tm*/
+div.btn-profile {
+  text-align: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 13px;
+  margin-bottom: 15px;
+}
+
+/*tm*/
+div.btn-profile button {
+  border: 2px solid;
+  border-radius: 20px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+/*tm*/
+div.btn-profile button[alt="btn-myevent"]{
+  width: 185px;
+  border-color: #00BFF0;
+  color: #FFFFFF;
+  background-color: #00BFF0;
+}
+
+/*tm*/
+div.btn-profile button[alt="btn-logout"]{
+  width: 110px;
+  border-color: #FF0000;
+  color: #FF0000;
+  background-color: #FFFFFF;
+}
+
 section[content="bottom-half"] {
   display: flex;
   flex-wrap: wrap;
