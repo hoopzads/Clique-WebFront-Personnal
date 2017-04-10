@@ -1056,6 +1056,10 @@ div.to-right {
 /*tm*/
 div.to-right button {
   border: 1px solid;
+<<<<<<< HEAD
+=======
+  font-weight: 5;
+>>>>>>> a759242dacbd05c5a7c71aaff7c4b3eabfb2f18a
   border-radius: 20px;
   height: 20px;
   font-weight: 5;
@@ -1143,7 +1147,12 @@ article.event-detail .top-moving .event-poster {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-
+article.event-detail .top-moving .event-info .share-interest-join .float-left{
+  color: #dfdbdb;
+}
+article.event-detail .top-moving .event-info {
+  color: #dfdbdb
+}
 article.event-detail .top-moving .event-name {
   flex: 1 1 20%;
   -webkit-flex: 1 1 20%;
