@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import App from './components/App';
+import App from './components/app';
 
 import LoginPage from './pages/loginPage';
 import HomePage from './pages/homePage';
