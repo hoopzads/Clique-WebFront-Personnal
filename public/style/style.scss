@@ -374,6 +374,10 @@ button[role="profile-button"] {
     }
 }
 
+div.event-name p {
+    margin-left: 20px;
+}
+
 /*tm*/
 div.profile-head {
     margin-bottom: 40px;
@@ -1038,11 +1042,20 @@ div.to-right button[alt="btn-join"]{
     margin-left: 5px;
 }
 
+div.event-bio p {
+    color: #555555;
+    margin-left: 30px;
+    font-size: 0.9em;
+    text-align: justify;
+    text-indent: 30px;
+}
+
 article.event-detail {
     padding: calc(0.07434944237918216 * #{$event-detail-width}) calc(0.05390334572490706 * #{$event-detail-width});
     box-sizing: border-box;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
     position: fixed;
     z-index: 551;
     top: calc(50% + 65px/2);
@@ -1117,7 +1130,7 @@ article.event-detail {
                 border-radius: 50%;
                 height: 1.5em;
                 width: 1.5em;
-                background: #000;
+                background: #FF1493;
                 margin-right: 5px;
             }
 

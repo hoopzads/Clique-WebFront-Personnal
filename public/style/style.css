@@ -413,6 +413,10 @@ button[role="profile-button"] img {
   display: inline-block;
 }
 
+div.event-name p {
+  margin-left: 20px;
+}
+
 /*tm*/
 div.profile-head {
   margin-bottom: 40px;
@@ -422,11 +426,7 @@ div.profile-head {
 /*tm*/
 div.profile-head h2[alt="profile-name"] {
   margin-bottom: 5px;
-<<<<<<< HEAD
   font-weight: normal;
-=======
-  font-weight:normal;
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
 }
 
 /*tm*/
@@ -435,11 +435,7 @@ div.profile-head div[alt="faculty-icon"] {
   height: 12px;
   width: 12px;
   background: #B22222;
-<<<<<<< HEAD
   margin-top: 4px;
-=======
-  margin-top:4px;
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   margin-right: 5px;
   position: absolute;
 }
@@ -504,11 +500,7 @@ div.my-event1 div[alt="event-icon"] {
   height: 12px;
   width: 12px;
   background: #FF1493;
-<<<<<<< HEAD
   margin-top: 4px;
-=======
-  margin-top:4px;
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   margin-left: 10px;
   margin-right: 5px;
   position: absolute;
@@ -534,11 +526,7 @@ div.my-event2 div[alt="event-icon"] {
   height: 12px;
   width: 12px;
   background: #1493FF;
-<<<<<<< HEAD
   margin-top: 4px;
-=======
-  margin-top:4px;
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   margin-left: 10px;
   margin-right: 5px;
   position: absolute;
@@ -564,11 +552,7 @@ div.my-event3 div[alt="event-icon"] {
   height: 12px;
   width: 12px;
   background: #FFC000;
-<<<<<<< HEAD
   margin-top: 4px;
-=======
-  margin-top:4px;
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   margin-left: 10px;
   margin-right: 5px;
   position: absolute;
@@ -614,11 +598,7 @@ div.btn-profile button {
 }
 
 /*tm*/
-<<<<<<< HEAD
 div.btn-profile button[alt="btn-myevent"] {
-=======
-div.btn-profile button[alt="btn-myevent"]{
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   width: 185px;
   border-color: #00BFF0;
   color: #FFFFFF;
@@ -626,22 +606,13 @@ div.btn-profile button[alt="btn-myevent"]{
 }
 
 /*tm*/
-<<<<<<< HEAD
 div.btn-profile button[alt="btn-logout"] {
-=======
-div.btn-profile button[alt="btn-logout"]{
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
   width: 110px;
   border-color: #FF0000;
   color: #FF0000;
   background-color: #FFFFFF;
 }
 
-<<<<<<< HEAD
-=======
-/*sadasdsadsadsadasdasd*/
-
->>>>>>> e4712421a8101955dfe6e5ba49a9e372a7976e2d
 section[content="bottom-half"] {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1113,12 +1084,20 @@ div.to-right button[alt="btn-join"] {
   margin-left: 5px;
 }
 
+div.event-bio p {
+  color: #555555;
+  margin-left: 30px;
+  font-size: 0.9em;
+  text-align: justify;
+  text-indent: 30px;
+}
+
 article.event-detail {
   padding: calc(0.07434944237918216 * 75vw) calc(0.05390334572490706 * 75vw);
   box-sizing: border-box;
-  font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
   position: fixed;
   z-index: 551;
   top: calc(50% + 65px/2);
@@ -1262,45 +1241,7 @@ article.event-detail .top-moving .event-poster img[alt="tag-icon"] {
   background: #000;
   margin-right: 5px;
 }
-div.event-name p {
-  margin-left: 20px;
-}
-/*tm*/
-div.to-right {
-  text-align: center;
-}
 
-/*tm*/
-div.to-right button {
-  border: 2px solid;
-  border-radius: 20px;
-  height: 20px;
-  font-size: 0.7em;
-}
-
-/*tm*/
-div.to-right button[alt="btn-interest"]{
-  width: 75px;
-  border-color: #FFFF00;
-  color: #FFFF00;
-  background-color: #FFFFFF;
-}
-
-/*tm*/
-div.to-right button[alt="btn-join"]{
-  width: 75px;
-  border-color: #00FFFF;
-  color: #00FFFF;
-  background-color: #FFFFFF;
-  margin-left: 5px;
-}
-div.event-bio p {
-  color: #555555;
-  margin-left: 30px;
-  font-size: 0.9em;
-  text-align: justify;
-  text-indent: 30px;
-}
 @media all and (max-width: 768px) {
   .toggle {
     display: block !important;
