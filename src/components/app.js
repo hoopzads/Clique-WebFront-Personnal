@@ -50,14 +50,9 @@ class App extends Component {
 
     render() {
         return (
-            // <LoginPage />
-            <div>
-                <SideMenu />
-                <div className="content-move-inactive">
-                    <HomePage />
-                    <TopNavBar />
-                </div>
-            </div>
+            <section>
+                {this.props.children}
+            </section>
         );
     }
 }

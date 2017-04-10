@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app.js'
+// import App from './components/app.js'
 // import App from './container/profilePopup.js';
+
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+
 import './index.css';
 
 import { Provider } from 'react-redux';
@@ -23,7 +27,7 @@ export const myStore = createStoreWithMiddleware(rootReducer);
 
 ReactDOM.render(
     <Provider store={myStore}>
-        <App />
+        <Router history={browserHistory} routes={routes} />
     </Provider>,
   document.getElementById('root')
 );
