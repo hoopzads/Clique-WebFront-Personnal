@@ -64,11 +64,7 @@ class eventDetail extends Component {
                         <div className="event-info">
                             <div className="share-interest-join" aria-hidden="true">
                                 <div className="float-left"><i className="fa fa-share-square-o" aria-hidden="true"></i> SHARE</div>
-<<<<<<< HEAD
                                 <div className="to-right">
-=======
-                                <div className="to-right" >
->>>>>>> a759242dacbd05c5a7c71aaff7c4b3eabfb2f18a
                                     <button alt="btn-interest">INTEREST</button>
                                     <button alt="btn-join">JOIN</button>
                                 </div>
