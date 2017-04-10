@@ -9,8 +9,7 @@ import HomePage from './pages/homePage';
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
-        <Route path="login" component={LoginPage} />
-        <Route path="home" component={HomePage} />
+        <Route path="signup" component={LoginPage} />
         <Route path="channel/:id" component={FallbackPage} />
         <Route path="*" component={FallbackPage} />
     </Route>
@@ -30,7 +29,6 @@ class FallbackPage extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.params.id);
         let interval = setInterval(() => {
             if(this.state.secondsLeft === 0) {
                 clearInterval(interval);

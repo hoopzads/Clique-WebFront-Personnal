@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import SearchBox from '../components/searchBox';
+import Bubble from '../components/Bubble';
 
 import autoBind from '../hoc/autoBind';
 
@@ -147,7 +148,9 @@ class topNavBar extends Component {
                 </button>
                 <SearchBox onUpdateSearch={this.onUpdateSearch} searchTerm={this.state.searchTerm} />
                 <div className="profile-menu-inactive"></div>
-                <div className="tags-menu-inactive"></div>
+                <div className="tags-menu-inactive">
+                    <Bubble />
+                </div>
             </nav>
         );
     }
