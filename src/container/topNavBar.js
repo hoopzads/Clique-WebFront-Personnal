@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import SearchBox from '../components/searchBox';
 import Bubble from '../components/Bubble';
+import ProfilePopUp from './profilePopup';
 
 import autoBind from '../hoc/autoBind';
 
@@ -147,7 +148,9 @@ class topNavBar extends Component {
                     <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
                 <SearchBox onUpdateSearch={this.onUpdateSearch} searchTerm={this.state.searchTerm} />
-                <div className="profile-menu-inactive"></div>
+                <div className="profile-menu-inactive">
+                    <ProfilePopUp />
+                </div>
                 <div className="tags-menu-inactive">
                     <Bubble />
                 </div>

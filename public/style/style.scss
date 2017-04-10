@@ -154,6 +154,11 @@ $profile-menu-color: #FCFCFC;
     display: none;
     position: absolute;
 }
+
+.profile-menu-inactive * {
+    display: none;
+}
+
 .profile-menu-active::before {
     content: "";
     width: 0;
