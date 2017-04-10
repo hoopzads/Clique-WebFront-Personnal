@@ -52,7 +52,7 @@ class eventDetail extends Component {
                         <img src="../../resource/images/X.svg" />
                     </button>
                     <div className="top-moving">
-                        <div className="event-name" aria-hidden="true">
+                        <div className="event-name">
                             <h2>Event Name</h2>
                             <div><img alt="channel-icon" /> Channel Name</div>
                         </div>
@@ -65,9 +65,9 @@ class eventDetail extends Component {
                         <div className="event-info">
                             <div className="share-interest-join" aria-hidden="true">
                                 <div className="float-left"><i className="fa fa-share-square-o" aria-hidden="true"></i> share</div>
-                                <div className="to-right" aria-hidden="true">
-                                    <button>Interested</button>
-                                    <button>Join</button>
+                                <div className="to-right" >
+                                    <button alt="btn-interest">INTEREST</button>
+                                    <button alt="btn-join">JOIN</button>
                                 </div>
                             </div>
                             <p className="hr"></p>
@@ -81,13 +81,17 @@ class eventDetail extends Component {
                         </div>
                     </div>
                     <p className="hr"></p>
-                    <section role="event-bio">
+                    <div className="event-bio">
                         <h3 className="display-none">Bio</h3>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer felis velit, ullamcorper eu ornare sed, vulputate quis diam. Duis ultrices rutrum sapien, in condimentum nibh sagittis sit amet. Morbi sit amet rhoncus dui, at pharetra nisi. Nunc et
-          lacus porttitor, pretium nisl at, sollicitudin velit. Donec felis nisl, consequat vitae egestas vestibulum, egestas non tortor. Cras mattis non sem nec aliquam. Sed dignissim sit amet sapien vitae feugiat. Pellentesque vel luctus ante, quis ornare
-          purus. Nulla in arcu sapien. Aenean tempor arcu ac lacinia pellentesque. Quisque vulputate maximus augue, non aliquet ligula gravida in. Donec a leo justo. Integer velit eros, blandit sit amet elit eget, efficitur mollis nulla. Suspendisse tempor
-          ligula facilisis scelerisque ullamcorper. Ut vehicula ligula ipsum, cursus condimentum sapien pretium ac.
-                    </section>
+                        <p>     Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        Event Detail  Event Detail Event Detail Event Detail Event Detail
+                        </p>
+                    </div>
                 </article>
             </div>
         );

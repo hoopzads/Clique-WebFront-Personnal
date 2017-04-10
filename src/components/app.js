@@ -1,7 +1,11 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
+import TopNavBar from '../container/topNavBar';
+import HomePage from '../pages/homePage';
+import SideMenu from './sideMenu';
 
+import LoginPage from '../pages/loginPage';
 import $ from 'jquery';
 import autoBind from '../hoc/autoBind';
 
@@ -46,11 +50,28 @@ class App extends Component {
 
     render() {
         return (
-            <section>
-                {this.props.children}
-            </section>
+            // <LoginPage />
+            <div>
+                <SideMenu />
+                <div className="content-move-inactive">
+                    <HomePage />
+                    <TopNavBar />
+                </div>
+            </div>
         );
     }
 }
 
 export default autoBind(App, false, ["setFBVariable"], ["pages"]);
+
+/*
+HomePage
+
+<div>
+    <SideMenu />
+    <div className="content-move-inactive">
+        <HomePage />
+        <TopNavBar />
+    </div>
+</div>
+*/
