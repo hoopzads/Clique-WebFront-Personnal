@@ -15,10 +15,16 @@ class homePage extends Component {
     constructor(props) {
         super(props);
         this.onClickMe = this.onClickMe.bind(this);
+        this.onItemPopUpClick = this.onItemPopUpClick.bind(this);
     }
 
     onClickMe() {
         // this.props.searched_item_handler(true);
+    }
+
+    onItemPopUpClick(item) {
+        if(this.props.pages.pop_up_item === null) this.props.set_pop_up_item(item);
+        this.props.toggle_pop_item();
     }
 
     render() {
@@ -35,7 +41,7 @@ class homePage extends Component {
                 <h1 className="display-none">Main body</h1>
                 <section role="carousel">
                     <h2 className="display-none">Carousel</h2>
-                    <SlickCarousel />
+                    <SlickCarousel onItemPopUpClick={this.onItemPopUpClick} />
                 </section>
                 <div className="below-carousel">
                     <section content="upcomming">

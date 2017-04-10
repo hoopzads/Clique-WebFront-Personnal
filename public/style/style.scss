@@ -51,12 +51,12 @@ $blur-strength: 5px;
 }
 
 .blur {
-  -webkit-filter: blur($blur-strength);
-  -moz-filter: blur($blur-strength);
-  -ms-filter: blur($blur-strength);
-  -o-filter: blur($blur-strength);
-  filter: blur($blur-strength);
-  transition: 0.2s;
+  // -webkit-filter: blur($blur-strength);
+  // -moz-filter: blur($blur-strength);
+  // -ms-filter: blur($blur-strength);
+  // -o-filter: blur($blur-strength);
+  // filter: blur($blur-strength);
+  // transition: 0.2s;
 }
 
 .display-none {
@@ -977,7 +977,6 @@ article.channel-item {
         width: $circle-size;
         height: $circle-size;
         border-radius: 50%;
-        background: #000;
         margin-right: 10px;
     }
 
@@ -1024,9 +1023,10 @@ div.to-right {
 
 /*tm*/
 div.to-right button {
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 20px;
     height: 20px;
+    font-weight: 5;
     font-size: 0.7em;
 }
 
@@ -1066,6 +1066,8 @@ article.event-detail {
     top: calc(50% + 65px/2);
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+
+    transition: 0.2s opacity ease-in-out;
 
     width: $event-detail-width;
     height: $event-detail-height;
@@ -1131,7 +1133,7 @@ article.event-detail {
                 align-items: center;
             }
 
-            img[alt="channel-icon"] {
+            img[alt="ci"] {
                 border-radius: 50%;
                 height: 1.5em;
                 width: 1.5em;
@@ -1149,9 +1151,13 @@ article.event-detail {
             padding-left: calc(0.02695167286245353 * #{$event-detail-width});
             width: calc($event-basis - 0.02695167286245353 * #{$event-detail-width});
             box-sizing: border-box;
+            color: #dfdbdb;
 
             .share-interest-join {
                 position: relative;
+                .float-left{
+                    color: #dfdbdb;
+                }
             }
 
             .to-right {
@@ -1193,13 +1199,15 @@ article.event-detail {
                 margin: 0 auto;
             }
 
-            img[alt="tag-icon"] {
+            img[data-icon="tag"] {
                 margin-top: 10px;
                 border-radius: 50%;
                 height: 1.5em;
                 width: 1.5em;
                 background: #000;
                 margin-right: 5px;
+                display: inline-block;
+                float: left;
             }
         }
     }

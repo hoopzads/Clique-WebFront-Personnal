@@ -2,16 +2,16 @@ body {
   background-color: #FFF;
 }
 
-.login-page a {
+.signup-page a {
   text-decoration: none;
   color: #688ed2;
 }
 
-.login-page a:hover {
+.signup-page a:hover {
   color: #99aeff;
 }
 
-.login-page .login-card {
+.signup-page .login-card {
   min-height: 300px;
   min-width: 300px;
   max-width: 400px;
@@ -26,14 +26,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0, 0, 0, 0.5;
 }
 
-.login-page .login-card img[alt="icon"] {
+.signup-page .login-card img[alt="icon"] {
   width: 270px;
   margin-bottom: 30px;
 }
 
-.login-page .login-card button[alt="fb-login"]::before {
+.signup-page .login-card button[alt="fb-login"]::before {
   position: absolute;
   width: 70%;
   height: 50px;
@@ -42,11 +44,11 @@ body {
   content: "";
 }
 
-.login-page .login-card button[alt="fb-login"]:hover::before {
+.signup-page .login-card button[alt="fb-login"]:hover::before {
   opacity: 0.2;
 }
 
-.login-page .login-card button[alt="fb-login"] {
+.signup-page .login-card button[alt="fb-login"] {
   height: 50px;
   width: 70%;
   padding: 0px;
@@ -58,7 +60,7 @@ body {
   align-items: center;
 }
 
-.login-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] {
+.signup-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] {
   display: inline-block;
   height: 50px;
   width: 50px;
@@ -66,22 +68,22 @@ body {
   background-color: #3c57a0;
 }
 
-.login-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] img[alt="fb-icon"] {
+.signup-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] img[alt="fb-icon"] {
   height: calc(0.7 * 50px);
   width: calc(0.7 * 50px);
   margin: auto;
 }
 
-.login-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] + div {
+.signup-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] + div {
   flex: 1;
   display: inline-block;
   width: calc(100% - 50px);
-  font-size: 18px;
+  font-size: 17px;
   color: #FFF;
   background-color: #688ed2;
 }
 
-.login-page footer[alt="login-footer"] {
+.signup-page footer[alt="login-footer"] {
   position: absolute;
   bottom: 0px;
   height: 70px;
@@ -93,12 +95,12 @@ body {
   color: #999;
 }
 
-.login-page footer[alt="login-footer"] div[alt="icon-zone"] {
+.signup-page footer[alt="login-footer"] div[alt="icon-zone"] {
   margin-right: 20px;
   margin-left: 10px;
 }
 
-.login-page footer[alt="login-footer"] img {
+.signup-page footer[alt="login-footer"] img {
   height: calc(0.7 * 70px);
   display: inline;
 }

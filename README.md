@@ -111,3 +111,4 @@ npm start
 	}
     ```
 3. Try not to change app.js anymore. Current version is using `react-router` to navigate. So each page is now its own component and it can be accessed by using the url. But I think it is okay for testing. Just change the component in IndexRoute to your page.
+4. Changing version of `react-router` from `2.0.0-rc5` to `2.5.2` to avoid `React.PropTypes` is deprecated warning.

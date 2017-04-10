@@ -2,7 +2,7 @@ body {
     background-color: #FFF;
 }
 
-.login-page {
+.signup-page {
     a {
         text-decoration: none;
         color: #688ed2;
@@ -30,6 +30,9 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        border-radius: 10px;
+        box-shadow: (0, 0, 0, 0.5);
 
         img[alt="icon"] {
             width: 270px;
@@ -83,7 +86,7 @@ body {
                 flex: 1;
                 display: inline-block;
                 width: calc(100% - #{$button-height});
-                font-size: 18px;
+                font-size: 17px;
                 color: #FFF;
                 background-color: #688ed2;
             }

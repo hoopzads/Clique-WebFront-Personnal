@@ -3,11 +3,13 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import '../../public/resource/slick-1.6.0/slick/slick.min.js';
+import EventDetail from '../container/eventDetail';
 
 class slickCarousel extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+        this.onItemClick = this.onItemClick.bind(this);
+    }
 
     componentDidMount() {
         $(".single-item").slick({
@@ -29,6 +31,10 @@ class slickCarousel extends Component {
         });
     }
 
+    onItemClick() {
+        this.props.onItemPopUpClick(<EventDetail />);
+    }
+
     render() {
         let posterTest = [];
         for(var i = 1; i < 32; i++) {
@@ -38,12 +44,12 @@ class slickCarousel extends Component {
             <div>
                 <div className='myContainer'>
                     <div className='single-item'>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[10]})`}}>1</div>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[12]})`}}>2</div>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[23]})`}}>3</div>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[16]})`}}>4</div>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[25]})`}}>5</div>
-                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[20]})`}}>6</div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[2]})`}} onClick={this.onItemClick}></div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[12]})`}} onClick={this.onItemClick}></div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[24]})`}} onClick={this.onItemClick}></div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[21]})`}} onClick={this.onItemClick}></div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[25]})`}} onClick={this.onItemClick}></div>
+                        <div className="slick-slide-item" style={{backgroundImage: `url(${posterTest[8]})`}} onClick={this.onItemClick}></div>
                     </div>
                 </div>
             </div>

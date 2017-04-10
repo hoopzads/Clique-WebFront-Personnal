@@ -63,15 +63,6 @@ button {
   float: left;
 }
 
-.blur {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -ms-filter: blur(5px);
-  -o-filter: blur(5px);
-  filter: blur(5px);
-  transition: 0.2s;
-}
-
 .display-none {
   display: none !important;
 }
@@ -1032,7 +1023,6 @@ article.channel-item img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background: #000;
   margin-right: 10px;
 }
 
@@ -1065,9 +1055,10 @@ div.to-right {
 
 /*tm*/
 div.to-right button {
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 20px;
   height: 20px;
+  font-weight: 5;
   font-size: 0.7em;
 }
 
@@ -1107,6 +1098,7 @@ article.event-detail {
   top: calc(50% + 65px/2);
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+  transition: 0.2s opacity ease-in-out;
   width: 75vw;
   height: calc(1.013011152416357 * 75vw);
   max-width: 695px;
@@ -1180,7 +1172,7 @@ article.event-detail .top-moving .event-name div {
   align-items: center;
 }
 
-article.event-detail .top-moving .event-name img[alt="channel-icon"] {
+article.event-detail .top-moving .event-name img[alt="ci"] {
   border-radius: 50%;
   height: 1.5em;
   width: 1.5em;
@@ -1195,10 +1187,15 @@ article.event-detail .top-moving .event-info {
   padding-left: calc(0.02695167286245353 * 75vw);
   width: calc($event-basis - 0.02695167286245353 * 75vw);
   box-sizing: border-box;
+  color: #dfdbdb;
 }
 
 article.event-detail .top-moving .event-info .share-interest-join {
   position: relative;
+}
+
+article.event-detail .top-moving .event-info .share-interest-join .float-left {
+  color: #dfdbdb;
 }
 
 article.event-detail .top-moving .event-info .to-right {
@@ -1237,13 +1234,15 @@ article.event-detail .top-moving .event-poster img[alt="main-poster"] {
   margin: 0 auto;
 }
 
-article.event-detail .top-moving .event-poster img[alt="tag-icon"] {
+article.event-detail .top-moving .event-poster img[data-icon="tag"] {
   margin-top: 10px;
   border-radius: 50%;
   height: 1.5em;
   width: 1.5em;
   background: #000;
   margin-right: 5px;
+  display: inline-block;
+  float: left;
 }
 
 @media all and (max-width: 768px) {

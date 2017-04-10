@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import autoBind from '../hoc/autoBind';
 import { Link } from 'react-router';
 
-import './css/login.css';
+import './css/signup.css';
 
 class loginPage extends Component {
 
@@ -51,7 +51,7 @@ class loginPage extends Component {
                 {basicInfo}
             </section>
         ) : (
-            <section className="login-page">
+            <section className="signup-page">
                 <atricle className="basic-card-no-glow login-card">
                     <img src="../../resource/images/icon.png" alt="icon" />
                     <button alt="fb-login" onClick={this.onLogin.bind(this)}>
@@ -59,17 +59,16 @@ class loginPage extends Component {
                             <img src="../../resource/images/fb_icon.svg" alt="fb-icon" />
                         </div>
                         <div>
-                            Log in with Facebook
+                            Sign up with Facebook
                         </div>
                     </button>
-                    <Link to='/home'>
+                    <Link to='/'>
                         Continue as guest
                     </Link>
                 </atricle>
                 <footer alt="login-footer">
-                    Created By
                     <div aria-hidden="true" alt="icon-zone">
-                        <img src="../../resource/images/ABJ.png" alt="ABJ-icon" />
+                        <img src="../../resource/images/obj_clique_logo.png" alt="spn-icon" />
                     </div>
                 </footer>
             </section>
