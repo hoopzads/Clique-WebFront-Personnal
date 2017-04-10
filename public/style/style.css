@@ -1065,7 +1065,8 @@ div.to-right {
 
 /*tm*/
 div.to-right button {
-  border: 2px solid;
+  border: 1px solid;
+  font-weight: 5;
   border-radius: 20px;
   height: 20px;
   font-size: 0.7em;
@@ -1151,7 +1152,12 @@ article.event-detail .top-moving .event-poster {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-
+article.event-detail .top-moving .event-info .share-interest-join .float-left{
+  color: #dfdbdb;
+}
+article.event-detail .top-moving .event-info {
+  color: #dfdbdb
+}
 article.event-detail .top-moving .event-name {
   flex: 1 1 20%;
   -webkit-flex: 1 1 20%;
