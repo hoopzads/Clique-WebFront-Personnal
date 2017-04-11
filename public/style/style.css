@@ -284,7 +284,7 @@ div.vr {
 p.hr {
   width: 100%;
   height: 1px;
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(128, 128, 128, 0.3);
   display: block;
   padding: 0px;
   margin: 7px 0px;
@@ -1089,6 +1089,7 @@ div.event-bio p {
   font-size: 0.9em;
   text-align: justify;
   text-indent: 30px;
+
 }
 
 article.event-detail {
@@ -1150,9 +1151,6 @@ article.event-detail .top-moving .event-poster {
 article.event-detail .top-moving .event-info .share-interest-join .float-left{
   color: #dfdbdb;
 }
-article.event-detail .top-moving .event-info {
-  color: #dfdbdb
-}
 article.event-detail .top-moving .event-name {
   flex: 1 1 20%;
   -webkit-flex: 1 1 20%;
@@ -1181,7 +1179,7 @@ article.event-detail .top-moving .event-name div {
   align-items: center;
 }
 
-article.event-detail .top-moving .event-name img[alt="ci"] {
+article.event-detail .top-moving .event-name img[alt="channel-icon"] {
   border-radius: 50%;
   height: 1.5em;
   width: 1.5em;
@@ -1196,7 +1194,7 @@ article.event-detail .top-moving .event-info {
   padding-left: calc(0.02695167286245353 * 75vw);
   width: calc($event-basis - 0.02695167286245353 * 75vw);
   box-sizing: border-box;
-  color: #dfdbdb;
+  /*color: #dfdbdb;*/
 }
 
 article.event-detail .top-moving .event-info .share-interest-join {
@@ -1204,9 +1202,38 @@ article.event-detail .top-moving .event-info .share-interest-join {
 }
 
 article.event-detail .top-moving .event-info .share-interest-join .float-left {
-  color: #dfdbdb;
+  color: #a4a5a3;
+  font-size: 0.8em;
+}
+article.event-detail .top-moving .event-info .number-join{
+  color: #a4a5a3;
+  font-size: 0.8em;
 }
 
+article.event-detail .top-moving .event-info .sub-detail{
+  color: #a4a5a3;
+  font-size: 0.8em;
+  line-height: 0.7em;
+}
+article.event-detail .top-moving .event-info .sub-detail .only-fac{
+  color: #FF0000;
+}
+article.event-detail .top-moving .event-info .sub-detail .firstmeet-detail{
+  width: 90%;
+  height: 6em;
+  padding: 5px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  line-height: 1.2em;
+}
+article.event-detail .top-moving .event-info .sub-detail .regis-detail{
+  width: 90%;
+  height: 2.5em;
+  padding: 5px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  line-height: 1.2em;
+}
 article.event-detail .top-moving .event-info .to-right {
   text-align: right;
   overflow: hidden;
