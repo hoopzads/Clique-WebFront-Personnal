@@ -6,6 +6,7 @@ import normPage from './hoc/normPage';
 
 import LoginPage from './pages/loginPage';
 import HomePage from './pages/homePage';
+import TagPage from './pages/tagPage';
 
 class FallbackPage extends Component {
 
@@ -52,6 +53,7 @@ export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="signup" component={LoginPage} />
+        <Route path="tagpage" component={TagPage} />
         <Route path="channel/:id" component={FallbackPage} />
         <Route path="*" component={FallbackPageNorm} />
     </Route>

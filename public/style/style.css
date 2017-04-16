@@ -1334,3 +1334,38 @@ article.event-detail .top-moving .event-poster img[data-icon="tag"] {
     -webkit-flex-direction: row;
   }
 }
+/* start FM*/
+article.tag-head {
+    margin: 20px auto;
+    padding: 10px;
+    width: 80%;
+    background: #FFF;
+    height: 75px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    align-items: center;
+    font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+
+
+}
+section[role="main-content"] {
+  background-color: #F1F1F1;
+  flex: 1;
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+
+section[role="main-content"] .below-carousel {
+  max-width: 1280px;
+  margin: auto;
+}
+/*end FM*/
