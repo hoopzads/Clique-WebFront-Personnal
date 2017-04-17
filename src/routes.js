@@ -6,6 +6,8 @@ import normPage from './hoc/normPage';
 
 import LoginPage from './pages/loginPage';
 import HomePage from './pages/homePage';
+import ChannelPage from './pages/channelPage';
+import EditProfile from './container/editProfile';
 
 class FallbackPage extends Component {
 

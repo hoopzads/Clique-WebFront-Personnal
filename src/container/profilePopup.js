@@ -17,8 +17,8 @@ class profilePopup extends Component {
             <div>
                 <div className="profile-popup">
                     <div>
-                        <div aria-hidden="true">
-                                <img src="../resource/images/dummyProfile.png" alt="profile-pic" />
+                        <div>
+                            <img src="../resource/images/dummyProfile.png" alt="profile-pic" />
                         </div>
                         <div className="profile-head" aria-hidden="true">
                             <h2 alt="profile-name">Mitsuha Atchula</h2>
