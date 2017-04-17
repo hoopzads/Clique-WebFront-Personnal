@@ -964,7 +964,7 @@ article.tag-head {
 
 
 }
-section[role="main-content"] {
+section[role="tag-content"] {
   background-color: #F1F1F1;
   flex: 1;
   width: 100%;
@@ -973,12 +973,12 @@ section[role="main-content"] {
   min-width: 280px;
 }
 section[content="event-list"] {
-    flex: 3;
+    flex: 2;
     display: inline-block;
     text-align: center;
 }
-section[role="main-content"] .below-carousel {
-  max-width: 2000px;
+section[role="tag-content"] .below-carousel {
+  max-width: 1440px;
   margin: auto;
 }
 /*end FM*/
