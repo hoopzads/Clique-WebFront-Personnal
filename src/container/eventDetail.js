@@ -76,17 +76,17 @@ class eventDetail extends Component {
                             <p className="hr"></p>
                             </div>
                             <div className="sub-detail">
-                                <p className="only-fac"><b>*</b> For <b>Engineering student</b> only</p>
-                                <p><b>*</b> 16:00 - 20:00 | 30 - 31 January 2017</p>
-                                <p><b>*</b> Sala Prakeaw</p>
+                                <p className="only-fac"><strong>*</strong> For <strong>Engineering student</strong> only</p>
+                                <p><strong>*</strong> 16:00 - 20:00 | 30 - 31 January 2017</p>
+                                <p><strong>*</strong> Sala Prakeaw</p>
                                 <p className="firstmeet-detail">
-                                <b>FIRST MEET</b><br />
+                                <strong>FIRST MEET</strong><br />
                                 16:00 | 15 JAN 2017<br />
                                 Chulachakrabong Bld.<br />
-                                <i>"Please bring your stident card to firstmeet"</i>
+                                <i><b>"Please bring your stident card to firstmeet"</b></i>
                                 </p>
                                 <p className="regis-detail">
-                                <b>REGISTERATION DURATION</b><br />
+                                <strong>REGISTERATION DURATION</strong><br />
                                 1 JAN 2017 - 10 JAN 2017<br />
                                 </p>
                             </div>
