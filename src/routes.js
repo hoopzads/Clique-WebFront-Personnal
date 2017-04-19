@@ -8,6 +8,8 @@ import LoginPage from './pages/loginPage';
 import HomePage from './pages/homePage';
 import ChannelPage from './pages/channelPage';
 import EditProfile from './container/editProfile';
+import tag from './pages/tagPage';
+
 
 class FallbackPage extends Component {
 
@@ -54,6 +56,7 @@ export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="signup" component={LoginPage} />
+        <Route path="tagpage" component={tag} />
         <Route path="channel/:id" component={FallbackPage} />
         <Route path="*" component={FallbackPageNorm} />
     </Route>
