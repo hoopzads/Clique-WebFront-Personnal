@@ -1,37 +1,38 @@
-/* eslint-disable */
-
 import React, { Component } from 'react';
 import $ from 'jquery';
 import autoBind from '../hoc/autoBind';
 
+let isSet = false;
+
 class eventDetail extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+        this.onBinding = this.onBinding.bind(this);
+    }
+
+    onBinding() {
+        if($(window).width() > 768) {
+            let overflow = $('.event-info').css('overflow');
+            $('.event-info').css('overflow', 'initial');
+            let height = Math.max($('.event-poster').children().height() + 20, $('.event-info').height() + 20 + $('.event-name').height());
+            if(!isSet) $('.top-moving').css('height', height);
+            $('.event-info').css('overflow', overflow);
+            isSet = true;
+            if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
+            if($('.event-detail').css('padding-left').replace('px','') > 29) $('.event-detail').css('padding-left', '29px');
+        }
+        else {
+            $('.top-moving').css('height', 'initial');
+            $('.event-detail').css('padding', '');
+            isSet = false;
+        }
+    }
 
     componentDidMount() {
-        $(document).ready(setTimeout(function() {
-            if($(window).width() > 768) {
-                $('.top-moving').css('height', $('.event-poster').children().height() + 20);
-                if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
-                if($('.event-detail').css('padding-left').replace('px','') > 29) $('.event-detail').css('padding-left', '29px');
-            }
-            else {
-                $('.top-moving').css('height', 'initial');
-                $('.event-detail').css('padding', '');
-            }
-        }, 10));
-
-        $(window).resize(function() {
-            if($(window).width() > 768) {
-                $('.top-moving').css('height', $('.event-poster').children().height() + 20);
-                if($('.event-detail').css('padding-top').replace('px','') > 40) $('.event-detail').css('padding-top', '40px');
-                if($('.event-detail').css('padding-left').replace('px','') > 29) $('.event-detail').css('padding-left', '29px');
-            }
-            else {
-                $('.top-moving').css('height', 'initial');
-                $('.event-detail').css('padding', '');
-            }
+        let _this = this;
+        $(window).resize(_this.onBinding);
+        $('.event-poster img[alt="main-poster"]').ready(() => {
+            _this.onBinding();
         })
     }
 
@@ -42,8 +43,10 @@ class eventDetail extends Component {
     componentWillUnmount() {
         $(window).unbind('resize');
     }
-
     render() {
+      let _this = this;
+        if(this.props.pages.is_item_shown) $(window).resize(_this.onBinding);
+        else $(window).unbind('resize');
         return (
             <div>
                 <div className="background-overlay" aria-hidden="true" />
