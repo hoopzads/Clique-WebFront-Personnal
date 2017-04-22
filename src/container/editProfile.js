@@ -30,15 +30,15 @@ class editProfile extends Component {
                     </section>
                     <p className="hr"></p>
                     <section className="edit-pro-left">
-                        <img alt="id"/> <p>5831000020</p>
-                        <img alt="birth"/> <p>14 March 1997</p>
-                        <img alt="nickname"/> <p>Nickname</p>
-                        <img alt="line"/> <p>Line ID</p>
-                        <img alt="email"/> <p>Email</p>
-                        <img alt="mobile"/> <p>Mobile Number</p>
-                        <img alt="size"/> <p>T-Shirt Size</p>
-                        <img alt="med"/> <p>Medical Problem</p>
-                        <img alt="food"/> <p>Food Allergy</p>
+                        <img alt="id"/> <input type="text" placeholder="Student ID" value="5831000020" data-initial-value=""/>
+                        <img alt="birth"/> <input type="text" placeholder="Birthdate" value="14 March 1997" data-initial-value=""/>
+                        <img alt="nickname"/> <input type="text" placeholder="Nickname" value="" data-initial-value=""/>
+                        <img alt="line"/> <input type="text" placeholder="Line ID" value="" data-initial-value=""/>
+                        <img alt="email"/> <input type="text" placeholder="Email" value="" data-initial-value=""/>
+                        <img alt="mobile"/> <input type="text" placeholder="Mobile Number" value="" data-initial-value=""/>
+                        <img alt="size"/> <input type="text" placeholder="T-Shirt Size" value="" data-initial-value=""/>
+                        <img alt="med"/> <input type="text" placeholder="Medical Problem" value="" data-initial-value=""/>
+                        <img alt="food"/> <input type="text" placeholder="Food Allergy" value="" data-initial-value=""/>
                     </section>
                     <p className="sec-line"></p>
                     <section className="edit-pro-right">
