@@ -42,7 +42,7 @@ class homePage extends Component {
 
                 <div className="below-carousel">
                         <article className="tag-head basic-card">
-                            <p>   <h2>TAG NAME</h2></p>
+                            <p> <h2>TAG NAME</h2></p>
                         </article>
                             <section content="event-list">
                             <EventItem posterSrc={posterTest[4]} detail-shown="true" />

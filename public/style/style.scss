@@ -1574,3 +1574,54 @@ article.event-detail {
         }
     }
 }
+/* start FM*/
+article.tag-head {
+    margin: 20px auto;
+    padding: 10px;
+    width: 80%;
+    background: #FFF;
+    height: 75px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    align-items: center;
+    font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+
+
+}
+div.tag-icon {
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background: #FF1493;
+    margin-top:4px;
+    margin-left: 10px;
+    margin-right: 5px;
+    position: absolute;
+}
+
+
+section[role="tag-content"] {
+  background-color: #F1F1F1;
+  flex: 1;
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+section[content="event-list"] {
+    flex: 2;
+    display: inline-block;
+    text-align: center;
+}
+section[role="tag-content"] .below-carousel {
+  max-width: 1440px;
+  margin: auto;
+}
+/*end FM*/
