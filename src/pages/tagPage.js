@@ -6,7 +6,7 @@ import CardList from '../components/cardList';
 import SlickCarousel from '../components/slickCarousel';
 import CircleList from '../components/circleList';
 import ChannelList from '../components/channelList';
-
+import './css/tagstyle.css';
 import pages from '../hoc/pages';
 import normalPage from '../hoc/normPage';
 
@@ -41,8 +41,10 @@ class homePage extends Component {
 
 
                 <div className="below-carousel">
-                        <article className="tag-head basic-card">
-                            <p> <h2>TAG NAME</h2></p>
+                        <article className="tag-proflie basic-card">
+                            <img className="photo" href="../../resource/images/poster_dummy/dummyProflie.png" />
+                            <div className=" "><h2>TAG NAME</h2></div>
+                            <div className="like-button">LIKE</div>
                         </article>
                             <section content="event-list">
                             <EventItem posterSrc={posterTest[4]} detail-shown="true" />
