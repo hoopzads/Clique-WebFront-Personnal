@@ -60,22 +60,22 @@ class channelPage extends Component {
                     <section className="cn-top-event">
                         <h1>TOP Event</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[0]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[1]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[0]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[1]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                     <section className="cn-all-event">
                         <h1>Event of this channel</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[2]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[3]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[4]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[2]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[3]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[4]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                     <section className="cn-completed-event">
                         <h1>Completed Event</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[5]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[6]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[7]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[5]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[6]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[7]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                 </section>
             </section>

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import SearchBox from '../components/searchBox';
 import Bubble from '../components/Bubble';
 import ProfilePopUp from './profilePopup';
+import { Link } from 'react-router';
 
 import autoBind from '../hoc/autoBind';
 
@@ -30,6 +31,7 @@ class topNavBar extends Component {
             if($(".content-move-active").length) {
                 $(".content-move-active").removeClass("content-move-active").addClass("content-move-inactive");
             }
+
             if(!_this.state.isFadeIn) {
                 _this.setState({
                     ...(_this.state),
@@ -39,6 +41,8 @@ class topNavBar extends Component {
                 this.props.unblur_bg();
                 this.props.forced_fix_bg();
                 this.props.searched_item_handler(!this.props.pages.searched_item);
+
+                this.blurModal();
             }
         } else {
             if($('.profile-menu-active').length) $('.profile-menu-active').removeClass('profile-menu-active').addClass('profile-menu-inactive');
@@ -53,6 +57,14 @@ class topNavBar extends Component {
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.onWindowResize);
+    }
+
+    blurModal() {
+        if($('.modal-container').hasClass('blur')) {
+            $('.modal-container').removeClass('blur');
+        } else {
+            $('.modal-container').addClass('blur');
+        }
     }
 
     onSearchClick() {
@@ -70,7 +82,9 @@ class topNavBar extends Component {
             this.props.blur_bg();
         }
         else this.props.toggle_bg();
-        console.log(this.props.pages);
+
+        this.blurModal();
+
         $('.search-box-container').fadeToggle(200);
     }
 
@@ -139,9 +153,13 @@ class topNavBar extends Component {
                         <input className="invisible" type="text" placeholder="Search" ref="first" onChange={() => { this.onUpdateSearch("first"); }} value={this.state.searchTerm}></input>
                     </form>
                 </section>
-                <img className="flex-center" src="../../resource/images/icon.png" alt="icon" />
+                <Link to="/" className="flex-center" onClick={() => {if(this.pages.is_blur) this.props.toggle_pop_item()}}>
+                    <img src="../../resource/images/icon.png" alt="icon" />
+                </Link>
                 <button aria-hidden="false" className="flex-right toggle-not invisible" role="profile-button" onClick={this.onToggleProfile}>
-                    Mitsuha
+                    <div>
+                        Mitsuha
+                    </div>
                     <img src="../../resource/images/dummyProfile.png" alt="profile"/>
                 </button>
                 <button className="flex-right toggle outline square-round" onClick={this.onSearchClick}>

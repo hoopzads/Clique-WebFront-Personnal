@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import EventItem from '../container/eventItem';
+import EditEvent from '../container/editEvent';
 // import CardList from '../components/cardList';
 // import SlickCarousel from '../components/slickCarousel';
 import Circle from '../components/circle';
@@ -21,7 +22,7 @@ class channelPage extends Component {
     }
 
     onItemPopUpClick(item) {
-        if(this.props.pages.pop_up_item === null) this.props.set_pop_up_item(item);
+        this.props.set_pop_up_item(item);
         this.props.toggle_pop_item();
     }
 
@@ -34,6 +35,7 @@ class channelPage extends Component {
 
         return (
             <section className="channel-main">
+                <button onClick={() => {this.onItemPopUpClick(<EditEvent key="test"/>)}}>Create Event</button>
                 <section className="channel-head">
                     <div className="cn-tag">
                         <Circle parent="tag" />
@@ -54,22 +56,22 @@ class channelPage extends Component {
                     <section className="cn-top-event">
                         <h1>TOP Event</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[0]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[1]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[0]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[1]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                     <section className="cn-all-event">
                         <h1>Event of this channel</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[2]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[3]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[4]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[2]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[3]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[4]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                     <section className="cn-completed-event">
                         <h1>Completed Event</h1>
                         <p className="hr"></p>
-                        <EventItem posterSrc={posterTest[5]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[6]} detail-shown="true" />
-                        <EventItem posterSrc={posterTest[7]} detail-shown="true" />
+                        <EventItem posterSrc={posterTest[5]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[6]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                        <EventItem posterSrc={posterTest[7]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                     </section>
                 </section>
             </section>

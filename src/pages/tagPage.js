@@ -45,12 +45,12 @@ class homePage extends Component {
                             <p> <h2>TAG NAME</h2></p>
                         </article>
                             <section content="event-list">
-                            <EventItem posterSrc={posterTest[4]} detail-shown="true" />
-                            <EventItem posterSrc={posterTest[5]} detail-shown="true" />
-                            <EventItem posterSrc={posterTest[6]} detail-shown="true" />
-                            <EventItem posterSrc={posterTest[7]} detail-shown="true" />
-                            <EventItem posterSrc={posterTest[6]} detail-shown="true" />
-                            <EventItem posterSrc={posterTest[7]} detail-shown="true" />
+                            <EventItem posterSrc={posterTest[4]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                            <EventItem posterSrc={posterTest[5]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                            <EventItem posterSrc={posterTest[6]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                            <EventItem posterSrc={posterTest[7]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                            <EventItem posterSrc={posterTest[6]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
+                            <EventItem posterSrc={posterTest[7]} detail-shown="true" onToggle={this.props.toggle_pop_item} onSetItem={this.props.set_pop_up_item} />
                             </section>
                 </div>
             </section>
