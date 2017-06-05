@@ -1,8 +1,8 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
-import autoBind from '../hoc/autoBind';
 import EventDetail from './eventDetail';
+import EventDetailFix from './eventDetail2';
 
 class eventItem extends Component {
     constructor(props) {
@@ -11,12 +11,13 @@ class eventItem extends Component {
     }
 
     onButtonClick() {
-        if(this.props.pages.pop_up_item === null) this.props.set_pop_up_item(<EventDetail />);
-        this.props.toggle_pop_item();
+        this.props.onSetItem(<EventDetailFix onToggle={this.props.onToggle} />);
+        this.props.onToggle();
     }
 
     render() {
         let detailShownClass = (this.props["detail-shown"] === "false") ? "card-only" : "";
+        detailShownClass += (this.props.noGlow === "true") ? " basic-card-no-glow" : "";
 
         const posterObj = (this.props.posterSrc) ? <div role="main-poster" alt="main-poster" style={{backgroundImage: `url('${this.props.posterSrc}')`}} /> : <div role="main-poster" alt="main-poster" style={{backgroundImage: `url('https://about.canva.com/wp-content/uploads/sites/3/2015/01/concert_poster.png')`}}/>;
 
@@ -61,4 +62,4 @@ class eventItem extends Component {
     }
 }
 
-export default autoBind(eventItem);
+export default eventItem;

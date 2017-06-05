@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
+$color-light-blue: #37c6f0;
+$color-light-yellow: #fff200;
+$color-light-pink: #f84994;
+$color-light-green: #74fa00;
+$color-light-red: #ff7200;
+
+$color-dark-blue: #008bdb;
+$color-dark-yellow: #ffab00;
+$color-dark-pink: #be2f7d;
+$color-dark-green: #568d0c;
+$color-dark-red: #fe2000;
+
 body {
     padding: 0px;
     margin: 0px;
@@ -13,6 +25,15 @@ body {
     font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
 }
 
+button {
+    padding-bottom: 0px;
+}
+
+.mar-h-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @mixin shade($colorOne, $colorTwo) {
     background: -webkit-linear-gradient(right, top, $colorOne, $colorTwo);
     background: -o-linear-gradient(bottom left, $colorOne, $colorTwo);
@@ -21,19 +42,19 @@ body {
 }
 
 .shade-blue {
-    @include shade(#37c6f0, #008bdb);
+    @include shade($color-light-blue, $color-dark-blue);
 }
 .shade-yellow {
-    @include shade(#fff200, #ffab00);
+    @include shade($color-light-yellow, $color-dark-yellow);
 }
 .shade-pink {
-    @include shade(#f84994, #be2f7d);
+    @include shade($color-light-pink, $color-dark-pink);
 }
 .shade-green {
-    @include shade(#74fa00, #568d0c);
+    @include shade($color-light-green, $color-dark-green);
 }
 .shade-red {
-    @include shade(#ff7200, #fe2000);
+    @include shade($color-light-red, $color-dark-red);
 }
 
 button {
@@ -51,12 +72,69 @@ $blur-strength: 5px;
 }
 
 .blur {
-  // -webkit-filter: blur($blur-strength);
-  // -moz-filter: blur($blur-strength);
-  // -ms-filter: blur($blur-strength);
-  // -o-filter: blur($blur-strength);
-  // filter: blur($blur-strength);
-  // transition: 0.2s;
+  -webkit-filter: blur($blur-strength);
+  -moz-filter: blur($blur-strength);
+  -ms-filter: blur($blur-strength);
+  -o-filter: blur($blur-strength);
+  filter: blur($blur-strength);
+  transition: 0.2s;
+}
+
+button[role="event-exit"] {
+    @extend button.invisible, button.square-round;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+$i: 10;
+@while $i < 50 {
+    .pad-#{$i} {
+        padding: 0px + $i;
+    }
+
+    .pad-v-#{$i} {
+        padding-top: 0px + $i;
+        padding-bottom: 0px + $i;
+    }
+
+    .pad-h-#{$i} {
+        padding-left: 0px + $i;
+        padding-right: 0px + $i;
+    }
+
+    .mar-#{$i} {
+        margin: 0px + $i;
+    }
+
+    .mar-v-#{$i} {
+        margin-top: 0px + $i;
+        margin-bottom: 0px + $i;
+    }
+
+    .mar-h-#{$i} {
+        margin-left: 0px + $i;
+        margin-right: 0px + $i;
+    }
+
+    $i: $i + 5;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-aligns-item {
+    align-items: center;
 }
 
 .display-none {
@@ -74,9 +152,9 @@ $blur-strength: 5px;
 
 .basic-card,
 .basic-card-no-glow {
-    border-radius: 5px;
+    border-radius: 5px !important;
     background: #FFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5)!important;
 }
 
 .content-move-inactive {
@@ -142,6 +220,8 @@ $blur-strength: 5px;
         margin-bottom: 10px;
     }
 }
+
+
 
 $profile-menu-color: #FCFCFC;
 
@@ -259,6 +339,78 @@ input.invisible:focus {
     box-shadow: 0px 0px 10px #5dbdf0;
 }
 
+@for $i from 1 through 5 {
+    input.bottom-outline-#{$i} {
+        @extend input.invisible;
+        border-bottom: #{$i}px solid #000;
+        border-radius: 0px;
+    }
+}
+
+input.border-transition {
+    transition: border 0.2s ease-in;
+}
+
+input.border-blue {
+    border-color: $color-light-blue;
+}
+
+input.border-green {
+    border-color: $color-light-green;
+}
+
+input.border-yellow {
+    border-color: $color-light-yellow;
+}
+
+input.border-pink {
+    border-color: $color-light-pink;
+}
+
+input.border-red {
+    border-color: $color-light-red;
+}
+
+input.border-focus-blue:focus {
+    border-color: $color-light-blue;
+}
+
+input.border-focus-green:focus {
+    border-color: $color-light-green;
+}
+
+input.border-focus-yellow:focus {
+    border-color: $color-light-yellow;
+}
+
+input.border-focus-pink:focus {
+    border-color: $color-light-pink;
+}
+
+input.border-focus-red:focus {
+    border-color: $color-light-red;
+}
+
+input.border-focus-dark-blue:focus {
+    border-color: $color-dark-blue;
+}
+
+input.border-focus-dark-green:focus {
+    border-color: $color-dark-green;
+}
+
+input.border-focus-dark-yellow:focus {
+    border-color: $color-dark-yellow;
+}
+
+input.border-focus-dark-pink:focus {
+    border-color: $color-dark-pink;
+}
+
+input.border-focus-dark-red:focus {
+    border-color: $color-dark-red;
+}
+
 div.vr {
     width: 1px;
     height: 30px;
@@ -368,8 +520,25 @@ button[role="profile-button"] {
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
-    display:flex;
+    -webkit-flex-direction: row; /* works with row or column */
+    flex-direction: row;
+
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    div {
+        height: calc(2em - 2px);
+        line-height: calc(2em - 2px);
+    }
+
     img {
         height: calc(2em - 2px);
         margin-left: 5px;
@@ -799,13 +968,13 @@ div.edit-profile{
     font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
     background-color: $profile-menu-color;
     color: #555555;
-    width: 650px;
-    height: 600px;
-    position: fixed;
-    top: calc(50% + 65px/2);
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    position: relative;
+    // top: calc(50% + 65px/2);
+    // left: 50%;
+    // transform: translateY(-50%) translateX(-50%);
     z-index: 555;
+    padding: 30px;
+    width: 650px;
 
     section.edit-pro-head{
         height: 115px;
@@ -859,9 +1028,7 @@ div.edit-profile{
     }
 
     section.edit-pro-left{
-        position: absolute;
-        width: 250px;
-        height: 440px;
+        flex: 1 1 50%;
         padding: 10px 50px;
 
         img{
@@ -887,10 +1054,11 @@ div.edit-profile{
     }
 
     section.edit-pro-right{
-        position: absolute;
-        left: 350px;
-        width: 220px;
-        height: 440px;
+        // position: absolute;
+        // left: 350px;
+        // width: 220px;
+        // height: 440px;
+        flex: 1 1 50%;
         padding: 0px 30px;
 
         p {
@@ -1404,6 +1572,7 @@ article.channel-item {
     img {
         width: $circle-size;
         height: $circle-size;
+        min-width: $circle-size;
         border-radius: 50%;
         margin-right: 10px;
     }
@@ -1643,7 +1812,7 @@ article.event-detail {
 
 @media all and (max-width : 768px) {
     .toggle {
-        display: block !important;
+        display: initial !important;
     }
     .toggle-not {
         display: none !important;
@@ -1683,6 +1852,11 @@ article.event-detail {
         order: 1 !important;
     }
 
+}
+
+.modal-main {
+    position: relative;
+    z-index: 551;
 }
 
 @media all and (max-width : 480px) {

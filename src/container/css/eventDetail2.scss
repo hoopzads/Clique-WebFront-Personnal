@@ -1,0 +1,183 @@
+$event-detail-width: 75vw;
+$event-detail-min-width: 200px;
+$event-detail-max-width: 695px;
+$event-detail-bp-1-width: 95vw;
+$event-detail-bp-2-width: 100vw;
+$event-basis: 20%;
+
+.modal-container {
+    position: fixed;
+    top: 65px;
+    width: 100vw;
+    height: calc(100vh - 65px);
+}
+
+article.event-detail-fix {
+    padding: 40px 30px;
+    box-sizing: border-box;
+    font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+    position: relative;
+    z-index: 551;
+
+    transition: 0.2s opacity ease-in-out;
+
+    width: $event-detail-width;
+    max-width: $event-detail-max-width;
+    min-width: $event-detail-min-width;
+
+    margin: 40px auto;
+
+    button[role="event-exit"] {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .top-moving {
+        display: flex;
+        position: relative;
+    }
+
+    .top-moving > * {
+        width: 50%;
+    }
+
+    .top-moving .image > img {
+        width: 100%;
+    }
+
+    .event-poster-fix {
+        // background: blue;
+
+        div.tags-container {
+            width: calc(100% - 0.02695167286245353 * #{$event-detail-width});
+            margin: 0 auto;
+        }
+
+        img[alt="main-poster"] {
+            width: calc(100%);
+            border-radius: 5px;
+            background: #000;
+            display: block;
+            margin: 0 auto;
+        }
+
+        img[data-icon="tag"] {
+            margin-top: 10px;
+            border-radius: 50%;
+            height: 1.5em;
+            width: 1.5em;
+            background: #000;
+            margin-right: 5px;
+            display: inline-block;
+            float: left;
+        }
+    }
+
+    .event-name {
+        flex: 1 1 $event-basis;
+        -webkit-flex: 1 1 $event-basis;
+        order: 1;
+        padding-left: calc(0.02695167286245353 * #{$event-detail-width});
+        width: calc($event-basis - 0.02695167286245353 * #{$event-detail-width});
+        max-height: 70px;
+        box-sizing: border-box;
+
+        h2 {
+            font-size: 1.5em;
+            margin: 0px;
+        }
+
+        div {
+            display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;      /* TWEENER - IE 10 */
+            display: -webkit-flex;     /* NEW - Chrome */
+            display:flex;
+            align-items: center;
+        }
+
+        img[alt="ci"] {
+            border-radius: 50%;
+            height: 1.5em;
+            width: 1.5em;
+            background: #FF1493;
+            margin-right: 5px;
+        }
+
+        // background: green;
+    }
+
+    .event-info {
+        flex: 1 1 calc(100% - #{$event-basis});
+        -webkit-flex: 1 1 calc(100% - #{$event-basis});
+        order: 1;
+        padding-left: calc(0.02695167286245353 * #{$event-detail-width});
+        width: calc($event-basis - 0.02695167286245353 * #{$event-detail-width});
+        box-sizing: border-box;
+        color: #dfdbdb;
+
+        .share-interest-join {
+            position: relative;
+            .float-left{
+                color: #dfdbdb;
+            }
+        }
+
+        .to-right {
+            text-align: right;
+            overflow: hidden;
+        }
+    }
+
+    .event-bio p {
+        color: #555555;
+        margin-left: 0px;
+        font-size: 0.9em;
+        text-align: justify;
+        text-indent: 30px;
+    }
+}
+
+div.background-overlay-fix {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 65px;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 550;
+    filter: alpha(opacity = 50); /* required for opacity to work in IE */
+}
+
+@media all and (max-width: 768px) {
+    article.event-detail-fix {
+        width: $event-detail-bp-1-width;
+        margin: 20px auto;
+    }
+
+    .top-moving {
+        display: block;
+        flex-direction: column;
+    }
+
+    .top-moving > * {
+        display: block;
+        height: initial !important;
+        width: 100% !important;
+    }
+}
+
+@media all and (max-width : 480px) {
+    article.event-detail-fix {
+        width: $event-detail-bp-2-width;
+        margin: 1px auto;
+        padding: 30px 23px;
+    }
+}

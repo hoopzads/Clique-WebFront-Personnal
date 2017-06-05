@@ -5,7 +5,7 @@ import { setCookie, getCookie, clearAllCookie } from './common';
 
 //myStore.getState()
 
-const hostname = "https://www.cueventhub.com/api/";
+const hostname = "https://api.cueventhub.com/";
 const expireDefaultInterval = 1000*60*60*3;
 
 export const requestActionList = [
@@ -332,6 +332,10 @@ export function getEvent(id) {
 export function searchEvent(keyword) {
     const rObj = request(`${hostname}event/search?keyword=${keyword}`, "get", types.SEARCH_EVENT_KEYWORD);
     return rObj.action;
+}
+
+export function getProfile() {
+    
 }
 
 export function searchChannel(keyword) {

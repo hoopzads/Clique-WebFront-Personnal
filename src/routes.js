@@ -7,7 +7,7 @@ import normPage from './hoc/normPage';
 import LoginPage from './pages/loginPage';
 import HomePage from './pages/homePage';
 import ChannelPage from './pages/channelPage';
-import EditProfile from './container/editProfile';
+import EditProfile from './pages/myEventPage';
 import tag from './pages/tagPage';
 
 
@@ -57,7 +57,8 @@ export default (
         <IndexRoute component={HomePage} />
         <Route path="signup" component={LoginPage} />
         <Route path="tagpage" component={tag} />
-        <Route path="channel/:id" component={FallbackPage} />
+        <Route path="channel/:id" component={ChannelPage} />
+        <Route path="profile" component={EditProfile} />
         <Route path="*" component={FallbackPageNorm} />
     </Route>
 );
