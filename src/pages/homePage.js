@@ -11,6 +11,7 @@ import pages from '../hoc/pages';
 import normalPage from '../hoc/normPage';
 
 import EditProfile from '../container/editProfile';
+import DatePicker from '../components/datePicker';
 
 class homePage extends Component {
 
