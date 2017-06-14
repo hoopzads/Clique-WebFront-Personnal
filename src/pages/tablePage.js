@@ -16,7 +16,7 @@ class tablePage extends Component {
                 <div className="table-search">
                     <form>
                         <div><i className="fa fa-search" aria-hidden="true"></i></div>
-                        <input type="text" placeholder="Search" ref="first"></input>
+                        <input type="text" placeholder="Search"></input>
                     </form>
                 </div>
             </section>
@@ -189,7 +189,7 @@ class tablePage extends Component {
                     <table>
                         <tr>
                             <td>ADD</td>
-                            <form><input type="text" placeholder="" ref="first"></input></form>
+                            <input type="text" placeholder=""></input>
                         </tr>
                     </table>
                     <button>IMPORT LIST</button>
