@@ -15,7 +15,7 @@ article.event-detail-fix {
   width: 75vw;
   max-width: 695px;
   min-width: 200px;
-  margin: 40px auto;
+  margin: 40px auto 100px auto;
 }
 
 article.event-detail-fix button[role="event-exit"] {

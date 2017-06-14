@@ -126,7 +126,7 @@ section.table-bottom div.table-add input {
     border-radius: 0 10px 10px 0;
 }
 
-section.table-bottom div.table-add button {
+section.table-bottom div.table-add button:not(.invisible) {
     border: 1.5px solid #AAAAAA;
     border-radius: 10px;
     width: 110px;

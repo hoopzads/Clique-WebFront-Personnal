@@ -11,26 +11,22 @@ class editProfile extends Component {
         this.state = {
             'id': '5830001111',
             'birth': '',
-            'nickname': '',
+            'nickname': 'John',
             'line': '',
             'email': '',
             'mobile': '',
             'size': '',
             'med': '',
             'food': '',
-            'new_id': '5830001111'
+            'new_id': '5830001111',
             'new_birth': '',
-            'new_nickname': '',
+            'new_nickname': 'John',
             'new_line': '',
             'new_email': '',
             'new_mobile': '',
             'new_size': '',
             'new_med': '',
             'new_food': '',
-        }
-
-        this.nextState = {
-
         }
 
         this.onKeyPressed = this.onKeyPressed.bind(this);
@@ -66,6 +62,24 @@ class editProfile extends Component {
             food: this.refs.food.value,
         };
         this.setState(newState);
+        this.props.toggle_pop_item();
+    }
+
+    cancel() {
+        const newState = {
+            ...this.state,
+            new_id: this.state.id,
+            new_birth: this.state.birth,
+            new_nickname: this.state.nickname,
+            new_line: this.state.line,
+            new_email: this.state.email,
+            new_mobile: this.state.mobile,
+            new_size: this.state.size,
+            new_med: this.state.med,
+            new_food: this.state.food,
+        };
+        this.setState(newState);
+        this.props.toggle_pop_item();
     }
 
     onExit() {
@@ -77,7 +91,7 @@ class editProfile extends Component {
             <div className="modal-container">
                 <div className="edit-profile basic-card-no-glow modal-main mar-h-auto mar-v-40">
                     <section className="edit-pro-head">
-                        <button role="exit" onClick={this.onExit.bind(this)}>
+                        <button role="exit" onClick={this.cancel.bind(this)}>
                             <img src="../../resource/images/X.svg" />
                         </button>
                         <img src="../resource/images/dummyProfile.png" alt="profile-pic" />
@@ -123,8 +137,8 @@ class editProfile extends Component {
                                 <div><button>EDIT</button></div>
                             </div>
                             <div className="btn-plane">
-                                <button className="cancel" onClick={this.onExit.bind(this)}>CANCEL</button>
-                                <button className="save" onClick={this.saveProfile}>SAVE</button>
+                                <button className="cancel" onClick={this.cancel.bind(this)}>CANCEL</button>
+                                <button className="save" onClick={this.saveProfile.bind(this)}>SAVE</button>
                             </div>
                         </section>
                     </div>

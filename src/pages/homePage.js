@@ -83,5 +83,4 @@ class homePage extends Component {
     }
 }
 
-
 export default normalPage(pages(homePage, true));
