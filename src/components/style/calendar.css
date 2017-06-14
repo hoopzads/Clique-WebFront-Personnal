@@ -67,15 +67,15 @@
 }
 
 .Calendar .Body .Days.d-4 {
-  height: calc(4*150px) !important;
+  height: calc(4*130px) !important;
 }
 
 .Calendar .Body .Days.d-5 {
-  height: calc(5*150px) !important;
+  height: calc(5*130px) !important;
 }
 
 .Calendar .Body .Days.d-6 {
-  height: calc(6*150px) !important;
+  height: calc(6*130px) !important;
 }
 
 .Calendar .Body .Week .Day,
@@ -130,7 +130,7 @@
   box-sizing: border-box;
   background-color: #AAA;
   text-align: left;
-  color: #FFF;
+  color: #555;
 }
 
 .EventRange-Container:hover > * {
@@ -152,23 +152,23 @@
 }
 
 .color-blue {
-  background: #008bdb !important;
+  background: #99ccff !important;
 }
 
 .color-yellow {
-  background: #ffab00 !important;
+  background: #ff6 !important;
 }
 
 .color-pink {
-  background: #be2f7d !important;
+  background: #ffccff !important;
 }
 
 .color-green {
-  background: #568d0c !important;
+  background: #99ff33 !important;
 }
 
 .color-red {
-  background: #fe2000 !important;
+  background: #ff6600 !important;
 }
 
 .Display-None {
@@ -181,7 +181,7 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   width: calc(150%/7);
   z-index: 402;
-  height: 150px;
+  height: 130px;
   overflow-y: scroll;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25) !important;
@@ -192,14 +192,14 @@
   transform: translateX(-10px);
   color: #FFF;
   width: calc(100% + 2*10px);
-  height: calc(150px + 2*10px);
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(130px + 2*10px);
 }
 
 .DayInfo > * {
-  flex: 1 1 50%;
   box-sizing: border-box;
-  white-space: nowrap;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: auto;
 }
 
 .DayInfo .Continuous,
@@ -232,8 +232,8 @@
   border-radius: 50%;
   background-color: #AAA;
   display: inline-block;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin: 5px;
+  color: #555;
 }
 
 .DayInfo .EventBlob:hover {
@@ -289,421 +289,421 @@
 }
 
 .DayInfo.pos-1-1 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-1 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-1-2 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-2 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-1-3 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-3 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-1-4 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-4 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-1-5 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-5 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-1-6 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-1-6 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-1-7 {
-  top: calc( 0*150px + 23px);
+  top: calc( 0*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-1-7 {
-  top: calc( 0*150px + 60px);
+  top: calc( 0*130px + 60px);
   left: calc(6*100%/7);
 }
 
 .DayInfo.pos-2-1 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-1 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-2-2 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-2 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-2-3 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-3 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-2-4 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-4 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-2-5 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-5 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-2-6 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-2-6 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-2-7 {
-  top: calc( 1*150px + 23px);
+  top: calc( 1*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-2-7 {
-  top: calc( 1*150px + 60px);
+  top: calc( 1*130px + 60px);
   left: calc(6*100%/7);
 }
 
 .DayInfo.pos-3-1 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-1 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-3-2 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-2 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-3-3 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-3 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-3-4 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-4 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-3-5 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-5 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-3-6 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-3-6 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-3-7 {
-  top: calc( 2*150px + 23px);
+  top: calc( 2*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-3-7 {
-  top: calc( 2*150px + 60px);
+  top: calc( 2*130px + 60px);
   left: calc(6*100%/7);
 }
 
 .DayInfo.pos-4-1 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-1 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-4-2 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-2 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-4-3 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-3 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-4-4 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-4 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-4-5 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-5 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-4-6 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-4-6 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-4-7 {
-  top: calc( 3*150px + 23px);
+  top: calc( 3*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-4-7 {
-  top: calc( 3*150px + 60px);
+  top: calc( 3*130px + 60px);
   left: calc(6*100%/7);
 }
 
 .DayInfo.pos-5-1 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-1 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-5-2 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-2 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-5-3 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-3 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-5-4 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-4 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-5-5 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-5 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-5-6 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-5-6 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-5-7 {
-  top: calc( 4*150px + 23px);
+  top: calc( 4*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-5-7 {
-  top: calc( 4*150px + 60px);
+  top: calc( 4*130px + 60px);
   left: calc(6*100%/7);
 }
 
 .DayInfo.pos-6-1 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(0*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-1 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(0*100%/7);
 }
 
 .DayInfo.pos-6-2 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(1*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-2 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(1*100%/7);
 }
 
 .DayInfo.pos-6-3 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(2*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-3 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(2*100%/7);
 }
 
 .DayInfo.pos-6-4 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(3*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-4 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(3*100%/7);
 }
 
 .DayInfo.pos-6-5 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(4*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-5 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(4*100%/7);
 }
 
 .DayInfo.pos-6-6 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(5*100%/7 - 25%/7);
 }
 
 .EventRange.pos-6-6 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(5*100%/7);
 }
 
 .DayInfo.pos-6-7 {
-  top: calc( 5*150px + 23px);
+  top: calc( 5*130px + 23px);
   left: calc(6*100%/7 - 50%/7);
 }
 
 .EventRange.pos-6-7 {
-  top: calc( 5*150px + 60px);
+  top: calc( 5*130px + 60px);
   left: calc(6*100%/7);
 }

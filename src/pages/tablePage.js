@@ -52,7 +52,7 @@ class tablePage extends Component {
                                 <td>sam_sdt</td>
                                 <td>Sam Saeddht</td>
                                 <td>sam_sdt@gmail.com</td>
-                                <td>-</td>
+                                <td>กินของราคาถูกไม่เป็น</td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -188,7 +188,7 @@ class tablePage extends Component {
                 <div className="table-add">
                     <table>
                         <tr>
-                            <td>ADD</td>
+                            <td><button className="invisible">ADD</button></td>
                             <form><input type="text" placeholder="" ref="first"></input></form>
                         </tr>
                     </table>

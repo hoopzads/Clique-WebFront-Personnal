@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Mitr');
 
-$color-dark-blue: #008bdb;
-$color-dark-yellow: #ffab00;
-$color-dark-pink: #be2f7d;
-$color-dark-green: #568d0c;
-$color-dark-red: #fe2000;
-$calendar-cell-height: 150px;
+$color-dark-blue: #99ccff;
+$color-dark-yellow: #ff6;
+$color-dark-pink: #ffccff;
+$color-dark-green: #99ff33;
+$color-dark-red: #ff6600;
+$calendar-cell-height: 130px;
 //$blob-size: 40px;
 $blob-size: 60px;
-
+//popopoopopopopopopopopopopopopopoopopopopopopo
 .Calendar-Container {
     font-family: Mitr;
     padding: 30px;
@@ -140,7 +140,7 @@ $blob-size: 60px;
     box-sizing: border-box;
     background-color: #AAA;
     text-align: left;
-    color: #FFF;
+    color: #555;
 }
 
 .EventRange-Container:hover > * {
@@ -199,14 +199,17 @@ $blob-size: 60px;
     transform: translateX(-10px);
     color: #FFF;
     width: calc(100% + 2*10px);
+    display: flex;
+    flex-wrap: wrap;
     height: calc(#{$calendar-cell-height} + 2*10px);
 }
 
 .DayInfo > * {
-    flex: 1 1 50%;
+    // flex: 1 1 50%;
     box-sizing: border-box;
-    white-space: nowrap;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: auto;
+    // white-space: nowrap;
+    // border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .DayInfo {
@@ -240,8 +243,8 @@ $blob-size: 60px;
         border-radius: 50%;
         background-color: #AAA;
         display: inline-block;
-        margin-right: 5px;
-        margin-left: 5px;
+        margin: 5px;
+        color: #555;
     }
 
     .EventBlob:hover {

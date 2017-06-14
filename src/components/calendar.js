@@ -94,22 +94,14 @@ class EventBlob extends Component {
 }
 
 class DayInfo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            'Continuous': ['Fishscale is', 'the fifth', 'studio', 'album by'],
-            'OneDay': ['American rapper', 'and Wu-Tang', 'Clan member', 'Ghostface Killah'],
-            'Events': ['Fishscale is', 'the fifth', 'studio', 'album by', 'American rapper', 'and Wu-Tang', 'Clan member', 'Ghostface Killah', 'Ghostface Killah'],
-        };
-    }
-
     render() {
         let cn = 'DayInfo';
-        // if(this.props.row && this.props.col) cn += ` pos-${this.props.row}-${this.props.col}`;
-
         return (
             <div className={cn} ref="DayInfo">
-                {this.props.Events.map((item, index) => { return <EventBlob key={`${this.props.keyName}-${index}`} name={item.name} color={`color-${item.color}`}/>})}
+                <div style={{'color': '#000', 'border': 'none', 'position': 'absolute', 'top': '10px', 'right': '10px'}}>{this.props.date}</div>
+                <div className="Blob-Container">
+                    {this.props.Events.map((item, index) => { return <EventBlob key={`${this.props.keyName}-${index}`} name={item.name} color={`color-${item.color}`}/>})}
+                </div>
             </div>
         );
     }
@@ -170,6 +162,22 @@ class Calendar extends Component {
                     'eventId': '',
                     'color': 'blue',
                     'nudge': 0
+                },
+                {
+                    'from': new Date("2017-06-15"),
+                    'to': new Date("2017-06-16"),
+                    'name': "I spy with little eyes",
+                    'eventId': '',
+                    'color': 'red',
+                    'nudge': 0
+                },
+                {
+                    'from': new Date("2017-06-16"),
+                    'to': new Date("2017-06-18"),
+                    'name': "La La Land",
+                    'eventId': '',
+                    'color': 'pink',
+                    'nudge': 0
                 }
             ]
         }
@@ -221,7 +229,9 @@ class Calendar extends Component {
         let wRange = (dateEnd.getDate() - dateStart.getDate() + 1);
 
         if(dateStart.getMonth() === dateEnd.getMonth() && thisMonth === dateStart.getMonth()) {
-            let nudge = `Nudge-${this.onSetNudge(dateStart, dateEnd, DateState)}`;
+            let nudgeNum = this.onSetNudge(dateStart, dateEnd, DateState);
+            let nudge = `Nudge-${nudgeNum}`;
+            if(nudgeNum >= 3) return null;
             if(!this.compareDate(dateStart, dateEnd) && (dateStart.getDay() >= dateEnd.getDay() || wRange >= 7)) {
                 let content = [];
                 let i = 1;
@@ -237,11 +247,14 @@ class Calendar extends Component {
                 return (<div className="EventRange-Container">{content}</div>);
             }
 
+
             return (<div className="EventRange-Container"><div className={`EventRange w-${wRange} pos-${row}-${col} color-${color} ${nudge}`}>{name}</div></div>);
         } else if(dateStart.getMonth() < thisMonth && thisMonth < dateEnd.getMonth() ) {
             let content =[];
             let i = 1;
-            let nudge = `Nudge-${this.onSetNudge(startOfMonth, startOfMonth.addDays(monthDay-1), DateState)}`;
+            let nudgeNum = this.onSetNudge(startOfMonth, startOfMonth.addDays(monthDay-1), DateState);
+            let nudge = `Nudge-${nudgeNum}`;
+            if(nudgeNum >= 2) return null;
             content.push(<div key={`${0}-event`} className={`EventRange w-${7 - SOMDay} pos-${1}-${SOMDay + 1} color-${color} BuntStart BuntEnd ${nudge}`}>{name}</div>);
             wRange = monthDay - (7 - SOMDay);
             while(wRange > 7) {
@@ -253,7 +266,9 @@ class Calendar extends Component {
             return (<div className="EventRange-Container">{content}</div>);
         } else if(dateStart.getMonth() !== dateEnd.getMonth()) {
             if(dateStart.getMonth() === thisMonth) {
-                let nudge = `Nudge-${this.onSetNudge(dateStart, startOfMonth.addDays(monthDay-1), DateState)}`;
+                let nudgeNum = this.onSetNudge(dateStart, startOfMonth.addDays(monthDay-1), DateState);
+                let nudge = `Nudge-${nudgeNum}`;
+                if(nudgeNum >= 2) return null;
                 if(row === Math.ceil((SOMDay + monthDay)/7)) {
                     return (<div className="EventRange-Container"><div className={`EventRange w-${monthDay - dateStart.getDate() + 1} pos-${row}-${col} color-${color} BuntEnd ${nudge}`}>{name}</div></div>);
                 }
@@ -278,7 +293,9 @@ class Calendar extends Component {
             } else if(dateEnd.getMonth() === thisMonth) {
                 let content = [];
                 let i = 1;
-                let nudge = `Nudge-${this.onSetNudge(startOfMonth, dateEnd, DateState)}`;
+                let nudgeNum = this.onSetNudge(startOfMonth, dateEnd, DateState);
+                let nudge = `Nudge-${nudgeNum}`;
+                if(nudgeNum >= 2) return null;
                 wRange = dateEnd.getDate();
 
                 //Position of end date
@@ -388,12 +405,13 @@ class Calendar extends Component {
 
             Days.push(
             <div className={cn} key={i+1} onClick={(e) => {
-                    if(e.target.className === "Day " || e.target.className === "DayInfo" ||  e.target.className === "Day Today") {
+                    if(e.target.className === "Day " || e.target.className === "DayInfo" ||  e.target.className === "Day Today" || e.target.className === "Blob-Container") {
                         this.onDateClick(i - SOMDay + 1);
                     }
                 }}>
                 {(i >= SOMDay && i < (monthDay + SOMDay)) ? (i - SOMDay + 1) : ''}
-                {(i >= SOMDay && i < (monthDay + SOMDay) && this.state.DateState[i - SOMDay]) ? <DayInfo Events={this.EventInDay(new Date(dayRef))} key={`Date-${i - SOMDay + 1}`} keyName={`Date-${i - SOMDay + 1}`} /> : null}
+                {(i >= SOMDay && i < (monthDay + SOMDay) && this.state.DateState[i - SOMDay]) ? <DayInfo Events={this.EventInDay(new Date(dayRef))} key={`Date-${i - SOMDay + 1}`} keyName={`Date-${i - SOMDay + 1}`} date={i - SOMDay + 1} /> : null}
+                {(this.EventInDay(new Date(dayRef)).length > 0) ? (<div style={{'position': 'absolute', 'bottom': '5px', 'left': '5px', 'fontSize': '0.75em', 'color': '#AAA'}}>{this.EventInDay(new Date(dayRef)).length}</div>) : null}
             </div>)
 
             if(i >= SOMDay && i < (monthDay + SOMDay)) dayRef = dayRef.addDays(1);
