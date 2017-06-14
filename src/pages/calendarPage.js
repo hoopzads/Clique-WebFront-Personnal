@@ -7,7 +7,7 @@ import normalPage from '../hoc/normPage';
 class calendarPage extends Component {
     render() {
         return (
-            <section role="main-content" onClick={this.onClickMe}>
+            <section role="main-content">
                 <Calendar />
             </section>
         );
