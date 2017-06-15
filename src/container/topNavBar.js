@@ -84,7 +84,7 @@ class topNavBar extends Component {
         else this.props.toggle_bg();
 
         this.blurModal();
-
+        console.log("ddddd");
         $('.search-box-container').fadeToggle(200);
     }
 
