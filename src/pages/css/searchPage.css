@@ -1,0 +1,26 @@
+article.event-search {
+	position: relative;
+	z-index: 551;  
+	margin-left: 5%;
+
+}
+
+div.keyword {
+	font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	color: #FFF;
+	display: inline;
+}
+
+div.found {
+	font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
+	font-size: 30px;
+	color: #FFF;	
+	display: inline;	
+	margin-left: 70px;
+}
+
+div.event-found {
+	margin-top: 50px;
+}
