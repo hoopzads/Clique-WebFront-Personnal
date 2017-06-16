@@ -138,6 +138,13 @@ section.table-bottom div.table-add button:not(.invisible) {
     margin-left: 545px;
 }
 
+section.table-bottom div.table-add button.invisible {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #888888;
+}
+
 section.table-bottom div.table-button button {
     border: 1.8px solid;
     border-radius: 10px;
