@@ -190,8 +190,6 @@ class tablePage extends Component {
                         <tr>
                             <td>ADD</td>
                             <input type="text" placeholder=""></input>
-                            <td><button className="invisible">ADD</button></td>
-                            <form><input type="text" placeholder=""></input></form>
                         </tr>
                     </table>
                     <button>IMPORT LIST</button>
