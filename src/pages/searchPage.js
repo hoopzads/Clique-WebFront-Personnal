@@ -15,7 +15,7 @@ class searchPage extends Component {
     render() {
         return (
 
-            <div className="modal-container">
+            <div  className="modal-container-search">
                 <article className="event-search">
                     <div className="keyword">Keyword</div>
                     <div className="found">found 17 results</div>
@@ -24,6 +24,7 @@ class searchPage extends Component {
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="true" />
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="true" />
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="true" />
+                        <br />
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="false" />
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="false" />
                         <EventItem posterSrc={`../../resource/images/poster_dummy/1.jpg`} detail-shown="false" />
