@@ -12,6 +12,7 @@ import tag from './pages/tagPage';
 import TablePage from './pages/tablePage';
 import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/searchPage';
+import ChannelInfo from './container/channelInfo';
 
 class FallbackPage extends Component {
 
@@ -64,6 +65,7 @@ export default (
         <Route path="table" component={TablePage} />
         <Route path="calendar" component={CalendarPage} />
         <Route path="sbar" component={SearchPage} />
+        <Route path="focuskuy" component={ChannelInfo} />
         <Route path="*" component={FallbackPageNorm} />
     </Route>
 );

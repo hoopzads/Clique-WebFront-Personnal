@@ -7,7 +7,8 @@ div.modal-container-search {
 
 article.event-search {
 	position: relative;
-	z-index: 551;  
+	padding-top: 40px;
+	z-index: 551;
 	margin-left: 10%;
 	margin-right: 10%;
 
@@ -24,8 +25,8 @@ div.keyword {
 div.found {
 	font-family: "Century Gothic", CenturyGothic, Muli, AppleGothic, sans-serif;
 	font-size: 30px;
-	color: #FFF;	
-	display: inline;	
+	color: #FFF;
+	display: inline;
 	margin-left: 70px;
 }
 
