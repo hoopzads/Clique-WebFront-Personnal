@@ -34,3 +34,7 @@ export const FB_CLEAR = 'FB_CLEAR';
 export const FB_UPDATE_STATUS = 'FB_UPDATE_STATUS';
 export const FB_GET_TOKEN = 'FB_GET_TOKEN';
 export const SET_FB_VARIABLE = 'SET_FB_VARIABLE';
+
+export const GET_USER_INFO = 'get_user_info';
+export const UPDATE_USER_EVENTS_INFO = 'update_user_events_info';
+export const UPDATE_USER_ADMIN_INFO = 'update_user_admin_info';

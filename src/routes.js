@@ -12,7 +12,11 @@ import tag from './pages/tagPage';
 import TablePage from './pages/tablePage';
 import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/searchPage';
+<<<<<<< HEAD
 import EditEvent from './container/editEvent2'
+=======
+import ChannelInfo from './container/channelInfo';
+>>>>>>> 1ef44db89343d609ab28ea4163cb41bb8e2d0697
 
 class FallbackPage extends Component {
 
@@ -65,7 +69,11 @@ export default (
         <Route path="table" component={TablePage} />
         <Route path="calendar" component={CalendarPage} />
         <Route path="sbar" component={SearchPage} />
+<<<<<<< HEAD
         <Route path="event" component={EditEvent}/>
+=======
+        <Route path="focuskuy" component={ChannelInfo} />
+>>>>>>> 1ef44db89343d609ab28ea4163cb41bb8e2d0697
         <Route path="*" component={FallbackPageNorm} />
     </Route>
 );

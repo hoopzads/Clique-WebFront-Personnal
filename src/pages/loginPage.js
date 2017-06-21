@@ -59,7 +59,9 @@ class loginPage extends Component {
                             <img src="../../resource/images/fb_icon.svg" alt="fb-icon" />
                         </div>
                         <div>
-                            Sign up with Facebook
+                            <span>
+                                Sign up with Facebook
+                            </span>
                         </div>
                     </button>
                     <Link to='/'>

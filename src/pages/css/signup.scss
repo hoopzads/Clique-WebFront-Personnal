@@ -84,11 +84,14 @@ body {
 
             div[alt="fb-icon-container"] + div {
                 flex: 1;
-                display: inline-block;
+                display: flex;
                 width: calc(100% - #{$button-height});
                 font-size: 17px;
                 color: #FFF;
                 background-color: #688ed2;
+            }
+            div[alt="fb-icon-container"] + div > span {
+                margin: auto;
             }
         }
     }
