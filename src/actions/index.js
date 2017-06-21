@@ -5,7 +5,8 @@ import { setCookie, getCookie, clearAllCookie } from './common';
 
 //myStore.getState()
 
-const hostname = "https://api.cueventhub.com/";
+// const hostname = "https://api.cueventhub.com/";
+export const hostname = "http://128.199.208.0:1111/";
 const expireDefaultInterval = 1000*60*60*3;
 
 export const requestActionList = [
@@ -113,29 +114,25 @@ function request(url, method, types) {
         action : null
     };
 
+    let tmp;
+
     switch (method) {
         case "get":
         case "Get":
-        case "post":
-        case "Post":
-        case "Put":
-        case "put":
-        case "Delete":
-        case "delete":
             rObj.isRESTFUL = true;
             rObj.action = { type: `${types}_PENDING` };
+
             axios[method](url).then((data) => {
                 myStore.dispatch({
                     type: `${types}_FULFILLED`,
                     payload: data
                 });
-            }).catch((error) => {
+            }, (error) => {
                 myStore.dispatch({
                     type: `${types}_REJECTED`,
                     payload: error
                 })
-            })
-
+            });
             break;
         default:
             rObj.isRESTFUL = false;
@@ -148,20 +145,85 @@ function request(url, method, types) {
 
 //
 
+function requestWithAuthorization(url, options) {
+    let config = {
+        'headers': {
+            'Authorization': ('JWT ' + getCookie('fb_sever_token'))
+        }
+    }
+
+    switch(options.method) {
+        case 'get':
+        case 'delete':
+            return axios[options.method](url, config);
+            break;
+        case 'post':
+        case 'put':
+            return axios[options.method](url, ((options.body) ? (options.body) : ({})), config);
+            break;
+        default:
+            return new Promise((res, rej) => {rej("Unsupported method")});
+    }
+}
+
+export function init_user_info() {
+    requestWithAuthorization(`${hostname}user`, {
+        'method': 'get',
+    }).then((data) => {
+        myStore.dispatch({
+            type: types.GET_USER_INFO,
+            payload: data.data
+        })
+    });
+
+    let tmp = [
+        requestWithAuthorization(`${hostname}user/join`, {
+            'method': 'get'
+        }),
+        requestWithAuthorization(`${hostname}user/interest`, {
+            'method': 'get'
+        }),
+        requestWithAuthorization(`${hostname}user/subscribe`, {
+            'method': 'get'
+        })
+    ];
+
+    Promise.all(tmp).then((datas) => {
+        let noti = [datas[0].data.notification, datas[1].data.notification, datas[2].data.notification];
+        let rNoti = [];
+        if(noti[0] == noti[1] && noti[1] == noti[2]) rNoti = noti[0];
+        else {
+            if(noti[0] == noti[1]) rNoti = noti[0];
+            else if(noti[1] == noti[2]) rNoti = noti[1];
+            else if(noti[0] == noti[2]) rNoti = noti[2];
+        }
+
+        myStore.dispatch({
+            type: types.UPDATE_USER_EVENTS_INFO,
+            payload: {
+                join: datas[0].data[Object.keys(datas[0].data).filter((key) => key !== "notification")],
+                subscribe: datas[1].data[Object.keys(datas[1].data).filter((key) => key !== "notification")],
+                interest: datas[2].data[Object.keys(datas[2].data).filter((key) => key !== "notification")],
+                notification: rNoti
+            }
+        })
+    })
+}
+
+//
+
 export function setFBVariable(_FB) {
     if(getCookie('fb_is_login')) {
         setTimeout(function() {
             let rObj_1 = {};
             let rObj_2 = {authResponse: {}, status: "unknown"};
 
-            ['fb_basic_info_email', 'fb_basic_info_name', 'fb_basic_info_id'].map((item) => {
+            ['fb_basic_info_email', 'fb_basic_info_name', 'fb_basic_info_id'].forEach((item) => {
                 rObj_1[item.replace('fb_basic_info_','')] = getCookie(item);
-                return null;
             });
 
-            ['fb_accessToken', 'fb_grantedScopes', 'fb_signedRequest', 'fb_userID'].map((item) => {
+            ['fb_accessToken', 'fb_grantedScopes', 'fb_signedRequest', 'fb_userID'].forEach((item) => {
                 rObj_2.authResponse[item.replace('fb_','')] = getCookie(item);
-                return null;
             })
 
             myStore.dispatch({
@@ -300,17 +362,19 @@ export function fbGetSeverToken(callback) {
     const FB = myStore.getState().pages.FB;
     if(FB && (myStore.getState().fb.status === "connected")) {
         axios.get(`${hostname}login/facebook?access_token=${myStore.getState().fb.authResponse.accessToken}&id=${myStore.getState().fb.authResponse.userID}`).then((res) => {
-            console.log(res);
             myStore.dispatch({
                 type: types.FB_GET_TOKEN,
                 payload: res.data.access_token
             });
             setCookie(`fb_sever_token`, res.data.access_token, expireDefaultInterval);
+
+            init_user_info();
+            if(typeof(callback) === "function") {
+                callback();
+            }
         }).catch((err) => {
             console.log(err);
         })
-
-        if(typeof(callback) === "function") callback();
 
         // myStore.dispatch({
         //     type: types.FB_GET_TOKEN,
@@ -335,7 +399,7 @@ export function searchEvent(keyword) {
 }
 
 export function getProfile() {
-    
+
 }
 
 export function searchChannel(keyword) {
@@ -426,3 +490,5 @@ export function getChannel(id) {
         type: `${types.GET_CHANNEL}_PENDING`
     };
 }
+
+//

@@ -76,11 +76,15 @@ body {
 
 .signup-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] + div {
   flex: 1;
-  display: inline-block;
+  display: flex;
   width: calc(100% - 50px);
   font-size: 17px;
   color: #FFF;
   background-color: #688ed2;
+}
+
+.signup-page .login-card button[alt="fb-login"] div[alt="fb-icon-container"] + div > span {
+  margin: auto;
 }
 
 .signup-page footer[alt="login-footer"] {

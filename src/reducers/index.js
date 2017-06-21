@@ -10,6 +10,7 @@ import reducer_search_tag from './reducer_search_tag';
 import reducer_fetch_all_channels from './reducer_fetch_all_channels';
 import reducer_fetch_all_events from './reducer_fetch_all_events';
 import reducer_fetch_new_event from './reducer_fetch_new_event';
+import reducer_user from './reducer_user';
 
 import reducer_fb from './reducer_FB';
 
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     a_searchDateObj: reducer_search_date,
     a_allEventsObj: reducer_fetch_all_events,
     a_newEventsObj: reducer_fetch_new_event,
-    fb: reducer_fb
+    fb: reducer_fb,
+    user: reducer_user
     //fb
 });
 

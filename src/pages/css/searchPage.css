@@ -1,7 +1,15 @@
+div.modal-container-search {
+	position: relative;
+	top: 65px;
+  	width: 100vw;
+  	height: calc(100vh - 65px);
+}
+
 article.event-search {
 	position: relative;
 	z-index: 551;  
-	margin-left: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
 
 }
 
