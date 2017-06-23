@@ -1,8 +1,11 @@
-div.modal-container-search {
-	position: relative;
+div.search-box-container {
+	overflow: scroll;
+	position: fixed;
 	top: 65px;
-  	width: 100vw;
-  	height: calc(100vh - 65px);
+	left: 0px;
+	box-sizing: border-box;
+	padding-bottom: 40px;
+	height: calc(100vh - 65px);
 }
 
 article.event-search {
@@ -11,7 +14,7 @@ article.event-search {
 	z-index: 551;
 	margin-left: 10%;
 	margin-right: 10%;
-
+	overflow: scroll;
 }
 
 div.keyword {

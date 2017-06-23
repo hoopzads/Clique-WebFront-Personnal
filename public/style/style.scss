@@ -1951,3 +1951,44 @@ section[role="tag-content"] .below-carousel {
 }
 
 /*end FM*/
+
+.no-pos {
+    position: fixed;
+}
+
+/* Start Faculty */
+
+$fac-color: (
+    engineer: #B80000,
+    arts: #B3B3B3,
+    science: #FFFF00,
+    pol_sci: #000000,
+    arch: #DF8800,
+    account: #00C0FF,
+    edu: #FF4E09,
+    com_art: #12269F,
+    econ: #FFD800,
+    med: #1E7E00,
+    vet_sci: #98C9E6,
+    dent: #760081,
+    pharma: #A3DF00,
+    law: #FFFFFF,
+    fine_art: #E20025,
+    nurse: #F90432,
+    health_sci: #D478FF,
+    psycho: #40129F,
+    sport_sci: #FF7E20,
+    chula: #FF6FDB
+);
+
+@each $name, $value in $fac-color {
+    .bg-#{$name} {
+        background: $value;
+    }
+
+    .text-#{$name} {
+        color: $value;
+    }
+}
+
+/* End Faculty */

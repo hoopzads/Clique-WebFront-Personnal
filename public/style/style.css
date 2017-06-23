@@ -2173,3 +2173,169 @@ section[role="tag-content"] .below-carousel {
 }
 
 /*end FM*/
+.no-pos {
+  position: fixed;
+}
+
+/* Start Faculty */
+.bg-engineer {
+  background: #B80000;
+}
+
+.text-engineer {
+  color: #B80000;
+}
+
+.bg-arts {
+  background: #B3B3B3;
+}
+
+.text-arts {
+  color: #B3B3B3;
+}
+
+.bg-science {
+  background: #FFFF00;
+}
+
+.text-science {
+  color: #FFFF00;
+}
+
+.bg-pol_sci {
+  background: #000000;
+}
+
+.text-pol_sci {
+  color: #000000;
+}
+
+.bg-arch {
+  background: #DF8800;
+}
+
+.text-arch {
+  color: #DF8800;
+}
+
+.bg-account {
+  background: #00C0FF;
+}
+
+.text-account {
+  color: #00C0FF;
+}
+
+.bg-edu {
+  background: #FF4E09;
+}
+
+.text-edu {
+  color: #FF4E09;
+}
+
+.bg-com_art {
+  background: #12269F;
+}
+
+.text-com_art {
+  color: #12269F;
+}
+
+.bg-econ {
+  background: #FFD800;
+}
+
+.text-econ {
+  color: #FFD800;
+}
+
+.bg-med {
+  background: #1E7E00;
+}
+
+.text-med {
+  color: #1E7E00;
+}
+
+.bg-vet_sci {
+  background: #98C9E6;
+}
+
+.text-vet_sci {
+  color: #98C9E6;
+}
+
+.bg-dent {
+  background: #760081;
+}
+
+.text-dent {
+  color: #760081;
+}
+
+.bg-pharma {
+  background: #A3DF00;
+}
+
+.text-pharma {
+  color: #A3DF00;
+}
+
+.bg-law {
+  background: #FFFFFF;
+}
+
+.text-law {
+  color: #FFFFFF;
+}
+
+.bg-fine_art {
+  background: #E20025;
+}
+
+.text-fine_art {
+  color: #E20025;
+}
+
+.bg-nurse {
+  background: #F90432;
+}
+
+.text-nurse {
+  color: #F90432;
+}
+
+.bg-health_sci {
+  background: #D478FF;
+}
+
+.text-health_sci {
+  color: #D478FF;
+}
+
+.bg-psycho {
+  background: #40129F;
+}
+
+.text-psycho {
+  color: #40129F;
+}
+
+.bg-sport_sci {
+  background: #FF7E20;
+}
+
+.text-sport_sci {
+  color: #FF7E20;
+}
+
+.bg-chula {
+  background: #FF6FDB;
+}
+
+.text-chula {
+  color: #FF6FDB;
+}
+
+/* End Faculty */

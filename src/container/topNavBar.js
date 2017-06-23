@@ -5,6 +5,7 @@ import SearchBox from '../components/searchBox';
 import Bubble from '../components/Bubble';
 import ProfilePopUp from './profilePopup';
 import { Link } from 'react-router';
+import SearchResult from './searchResult';
 
 import autoBind from '../hoc/autoBind';
 
@@ -16,13 +17,14 @@ class topNavBar extends Component {
         super(props);
         this.state = {
             'searchTerm': '',
-            'isFadeIn': true
+            'isFadeIn': true,
+            'isSearchActive': false
         }
 
         this.onUpdateSearch = this.onUpdateSearch.bind(this);
-        this.onSearchClick = this.onSearchClick.bind(this);
         this.onWindowResize = this.onWindowResize.bind(this);
         this.onButtonToggle = this.onButtonToggle.bind(this);
+        this.onSearchToggleState = this.onSearchToggleState.bind(this);
     }
 
     onWindowResize() {
@@ -32,18 +34,6 @@ class topNavBar extends Component {
                 $(".content-move-active").removeClass("content-move-active").addClass("content-move-inactive");
             }
 
-            if(!_this.state.isFadeIn) {
-                _this.setState({
-                    ...(_this.state),
-                    'isFadeIn': !_this.state.isFadeIn
-                });
-                $('.search-box-container').fadeToggle(200);
-                this.props.unblur_bg();
-                this.props.forced_fix_bg();
-                this.props.searched_item_handler(!this.props.pages.searched_item);
-
-                this.blurModal();
-            }
         } else {
             if($('.profile-menu-active').length) $('.profile-menu-active').removeClass('profile-menu-active').addClass('profile-menu-inactive');
             if($('.tags-menu-active').length) $('.tags-menu-active').removeClass('tags-menu-active').addClass('tags-menu-inactive');
@@ -51,12 +41,43 @@ class topNavBar extends Component {
     }
 
     componentDidMount() {
-
         window.addEventListener("resize", this.onWindowResize);
+        this.onWindowResize();
     }
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.onWindowResize);
+    }
+
+    componentDidUpdate() {
+        console.log(this.state);
+    }
+
+    onSearchToggleState(value) {
+        let tmp = (typeof(value) === "boolean") ? value : !this.state.isSearchActive;
+
+        this.props.searched_item_handler(!this.props.pages.searched_item);
+        if(this.props.pages.is_item_shown) {
+            // this.props.hide_pop_item();
+            this.props.blur_bg();
+        }
+
+        else {
+            if(tmp) {
+                //SearchBox Active
+                if(!this.props.pages.is_blur) this.props.blur_bg();
+            } else {
+                this.props.unblur_bg();
+            }
+        }
+
+        this.blurModal();
+        $('.search-box-container').fadeToggle(200);
+
+        this.setState({
+            ...this.state,
+            isSearchActive: tmp
+        });
     }
 
     blurModal() {
@@ -65,26 +86,6 @@ class topNavBar extends Component {
         } else {
             $('.modal-container').addClass('blur');
         }
-    }
-
-    onSearchClick() {
-        //Should called action creator
-        this.setState({
-            ...(this.state),
-            'isFadeIn': !this.state.isFadeIn
-        });
-        if(this.state.isFadeIn) this.props.forced_fix_bg();
-        else this.props.cancel_fix_bg();
-        //this.props.pages.forced_fixed_body
-        this.props.searched_item_handler(!this.props.pages.searched_item);
-        if(this.props.pages.is_item_shown) {
-            // this.props.hide_pop_item();
-            this.props.blur_bg();
-        }
-        else this.props.toggle_bg();
-
-        this.blurModal();
-        $('.search-box-container').fadeToggle(200);
     }
 
     onUpdateSearch(select, optional) {
@@ -137,6 +138,7 @@ class topNavBar extends Component {
     }
 
     render() {
+
         return (
             <nav aria-hidden="false" role="top-nav">
                 <button className="outline square-round toggle" onClick={this.onButtonToggle}>
@@ -149,7 +151,7 @@ class topNavBar extends Component {
                     <div aria-hidden="true" className="vr"></div>
                     <form>
                         <i className="fa fa-search" aria-hidden="true"></i>
-                        <input className="invisible" type="text" placeholder="Search" ref="first" onChange={() => { this.onUpdateSearch("first"); }} value={this.state.searchTerm}></input>
+                        <input className="invisible" type="text" placeholder="Search" ref="first" onChange={() => { this.onUpdateSearch("first"); this.onSearchToggleState(true);}} value={this.state.searchTerm} onClick={this.onSearchToggleState}></input>
                     </form>
                 </section>
                 <Link to="/" className="flex-center" onClick={() => {if(this.pages.is_blur) this.props.toggle_pop_item()}}>
@@ -161,10 +163,16 @@ class topNavBar extends Component {
                     </div>
                     <img src="../../resource/images/dummyProfile.png" alt="profile"/>
                 </button>
-                <button className="flex-right toggle outline square-round" onClick={this.onSearchClick}>
+                <button className="flex-right toggle outline square-round" onClick={() => { this.onSearchToggleState()}}>
                     <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
-                <SearchBox onUpdateSearch={this.onUpdateSearch} searchTerm={this.state.searchTerm} />
+                <div className="toggle no-pos">
+                    <SearchBox onUpdateSearch={this.onUpdateSearch} searchTerm={this.state.searchTerm} />
+                    <SearchResult noBg={true} />
+                </div>
+                <div className="toggle-not no-pos">
+                    <SearchResult />
+                </div>
                 <div className="profile-menu-inactive">
                     <ProfilePopUp />
                 </div>

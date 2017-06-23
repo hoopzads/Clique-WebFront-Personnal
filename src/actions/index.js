@@ -2,6 +2,7 @@ import { myStore } from '../index';
 import * as types from './types';
 import axios from 'axios';
 import { setCookie, getCookie, clearAllCookie } from './common';
+import * as facultyMap from './facultyMap';
 
 //myStore.getState()
 
@@ -213,6 +214,7 @@ export function init_user_info() {
 //
 
 export function setFBVariable(_FB) {
+    // console.log(facultyMap.findInfoByName("นิเทด"));
     if(getCookie('fb_is_login')) {
         setTimeout(function() {
             let rObj_1 = {};
