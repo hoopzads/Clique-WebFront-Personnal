@@ -35,6 +35,7 @@ class editProfile extends Component {
                 'firstName': data.data.firstName,
                 'lastName': data.data.lastName,
                 'picture': data.data.picture_200px,
+
                 'regId': data.data.regId,
                 'birth_day': data.data.birth_day,
                 'nick_name': data.data.nick_name,
@@ -44,6 +45,7 @@ class editProfile extends Component {
                 'shirt_size': data.data.shirt_size,
                 'disease': data.data.disease,
                 'allergy': data.data.allergy,
+                
                 'new_regId': data.data.regId,
                 'new_birth_day': data.data.birth_day,
                 'new_nick_name': data.data.nick_name,
