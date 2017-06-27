@@ -1,14 +1,16 @@
 /* eslint-disable */
 
-import React , { Component } from 'react';
-import EventItem from '../container/eventItem';
-import CardList from '../components/cardList';
-import SlickCarousel from '../components/slickCarousel';
-import CircleList from '../components/circleList';
-import ChannelList from '../components/channelList';
 import './css/tagstyle.css';
-import pages from '../hoc/pages';
+
+import React , { Component } from 'react';
+
+import CardList from '../components/cardList';
+import ChannelList from '../components/channelList';
+import CircleList from '../components/circleList';
+import EventItem from '../container/eventItem';
+import SlickCarousel from '../components/slickCarousel';
 import normalPage from '../hoc/normPage';
+import pages from '../hoc/pages';
 
 class homePage extends Component {
 
