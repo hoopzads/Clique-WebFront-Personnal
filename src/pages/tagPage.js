@@ -44,7 +44,7 @@ class homePage extends Component {
 
                 <div className="below-carousel">
                         <article className="tag-proflie basic-card">
-                            <img className="photo" href="../../resource/images/poster_dummy/dummyProflie.png" />
+                            <img className="photo"  />
                             <div className=" "><h2>TAG NAME</h2></div>
                             <div className="like-button">LIKE</div>
                         </article>
